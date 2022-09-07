@@ -1,6 +1,5 @@
 let board = [];
 
-
 function generateBlock(solid, row, column) {
 	/*Befüllt die "unter Arrays" mit Objekten*/
 	return {
@@ -70,5 +69,8 @@ function generateArray () {
 
 	
 generateArray();
+
+exports.board;
+
 showBoard(board);
 
