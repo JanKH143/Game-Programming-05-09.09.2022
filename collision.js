@@ -1,5 +1,5 @@
-import {board} from "board.js";
-
+import board from "./board.js";
+console.log(board);
 function style(element, property) {
     return getComputedStyle(element).property;
 }
