@@ -1,6 +1,5 @@
 $(document).on("keydown", e => {
-   // alert(e.code);
     if (e.code == "Space") {
-        location.replace("start.html");
+        location.replace("start.html"); //leitet den User auf die Startseite weiter
     }
 })
