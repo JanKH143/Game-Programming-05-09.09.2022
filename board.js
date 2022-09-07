@@ -1,6 +1,5 @@
 let board = [];
 
-
 function generateBlock(solid, row, column) {
 	/*Befüllt die "unter Arrays" mit Objekten*/
 	return {
@@ -20,11 +19,9 @@ function showBoard (board) {
 
 
 			if (board[e][d].solid == true) {
-				/*Hier kommt Code zum anzeigen von Soliden Blocks rein*/
+				$('#spielfeld').append('<div class="solid">');
 			}
-			if (board[e][d].solid == false) {
-				/*Hier kommt Code zum anzeigen von nicht Soliden Blocks rein*/
-			}
+			
 
 		}
 
@@ -32,7 +29,7 @@ function showBoard (board) {
 	}
 }
 
-$(function() {
+function generateArray () {
 	for(let i = 0; i < 20; i++) {
 
 		/*Erste for-Schleife kreirt die "unter Arrays"*/
@@ -67,5 +64,13 @@ $(function() {
 		}
 	}
 
+}
 
-});
+
+	
+generateArray();
+
+exports.board;
+
+showBoard(board);
+
