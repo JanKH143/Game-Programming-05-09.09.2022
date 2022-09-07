@@ -70,7 +70,7 @@ function generateArray () {
 	
 generateArray();
 
-exports.board;
+export {board};
 
 showBoard(board);
 
