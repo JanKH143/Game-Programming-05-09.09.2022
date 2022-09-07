@@ -68,8 +68,5 @@ function generateArray () {
 }
 
 
-	
-generateArray();
-
-showBoard(board);
+showBoard(generateArray());
 
