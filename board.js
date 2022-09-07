@@ -17,9 +17,13 @@ function showBoard (board) {
 
 
 			if (board[e][d].solid == true) {
-				$('#spielfeld').append('<div class="solid">');
+				console.log("test1");
+				$('#board').append('<div class="solid"></div>');
+			} else {
+				console.log("test2");
+				$('#board').append('<div class="test"></div>');
 			}
-			
+			console.log("test");
 
 		}
 
@@ -66,7 +70,3 @@ function generateArray () {
 	return board;
 
 }
-
-
-showBoard(generateArray());
-
