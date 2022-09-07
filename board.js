@@ -20,11 +20,9 @@ function showBoard (board) {
 
 
 			if (board[e][d].solid == true) {
-				/*Hier kommt Code zum anzeigen von Soliden Blocks rein*/
+				$('#spielfeld').append('<div class="solid">');
 			}
-			if (board[e][d].solid == false) {
-				/*Hier kommt Code zum anzeigen von nicht Soliden Blocks rein*/
-			}
+			
 
 		}
 
