@@ -1,10 +1,11 @@
-import {board} from "board.js";
+import * as board from "board.js";
 
 function style(element, property) {
     return getComputedStyle(element).property;
 }
 
 //CSS Wert erkennen
+let board = board.generateArray();
 
 $(document).ready(function () {
     let element
