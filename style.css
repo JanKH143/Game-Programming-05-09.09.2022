@@ -25,7 +25,8 @@
 #gameover {
     background-image: url(Bilder/gameover.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 101%;
+    
     
 }
 
