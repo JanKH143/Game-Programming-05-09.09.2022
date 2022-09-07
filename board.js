@@ -1,5 +1,3 @@
-let board = [];
-
 function generateBlock(solid, row, column) {
 	/*Befüllt die "unter Arrays" mit Objekten*/
 	return {
@@ -30,6 +28,7 @@ function showBoard (board) {
 }
 
 function generateArray () {
+	let board = [];
 	for(let i = 0; i < 20; i++) {
 
 		/*Erste for-Schleife kreirt die "unter Arrays"*/
@@ -64,13 +63,10 @@ function generateArray () {
 		}
 	}
 
+	return board;
+
 }
 
 
-	
-generateArray();
-
-exports.board;
-
-showBoard(board);
+showBoard(generateArray());
 

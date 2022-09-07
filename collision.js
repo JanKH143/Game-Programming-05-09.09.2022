@@ -1,10 +1,9 @@
-import {board} from "board.js";
-
 function style(element, property) {
     return getComputedStyle(element).property;
 }
 
 //CSS Wert erkennen
+let board = generateArray();
 
 $(document).ready(function () {
     let element
@@ -13,7 +12,7 @@ $(document).ready(function () {
     let canJump
 
     for (let i = 0; i < 20; i++) {
-        $(document).keydown(function () {
+        $(document).keydown(e => {
             for (let j = 0; j < 38; j++) {
                 element = board[i][j];
                 if (element.solid == true) {            //solid ja oder nein
