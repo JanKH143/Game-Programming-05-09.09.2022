@@ -22,6 +22,14 @@
     border-radius: 20px;
 }
 
+#gameover {
+    background-image: url(Bilder/gameover.png);
+    background-repeat: no-repeat;
+    background-size: 101%;
+    
+    
+}
+
 #startbutton {
     top: 400px;
     left: 765px;
@@ -49,4 +57,27 @@
     width: 1000px;
     height: 600px;
     display:flex;
+
+.credits {
+    font-size: 30px;
+}
+
+#logik {
+    left:19%;
+    position: absolute;
+}
+
+#design {
+    left:40%;
+    width: 20%;
+    position: absolute;
+}
+
+#coding {
+    right:20%;
+    position: absolute;
+}
+
+.center {
+    text-align: center;
 }
