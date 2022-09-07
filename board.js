@@ -30,7 +30,7 @@ function showBoard (board) {
 	}
 }
 
-$(function() {
+function generateArray () {
 	for(let i = 0; i < 20; i++) {
 
 		/*Erste for-Schleife kreirt die "unter Arrays"*/
@@ -65,5 +65,10 @@ $(function() {
 		}
 	}
 
+}
 
-});
+
+	
+generateArray();
+showBoard(board);
+
