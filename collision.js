@@ -1,3 +1,5 @@
+import {board} from "board.js";
+
 function style(element, property) {
     return getComputedStyle(element).property;
 }
