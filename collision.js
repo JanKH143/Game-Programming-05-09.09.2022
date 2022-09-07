@@ -1,35 +1,76 @@
-import board from "./board.js";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//import board from "./board.js";
 console.log(board);
-function style(element, property) {
-    return getComputedStyle(element).property;
+
+let player = {
+    left: 950,
+    top: 550,
 }
 
-//CSS Wert erkennen
+function setPosition() {
+    $("#player").css({ "left": player.left, "top": player.top });
+}
 
 $(document).ready(function () {
+    setPosition();
     let element
-    let canMoveLeft
-    let canMoveRight
-    let canJump
+    let canMoveLeft = true
+    let canMoveRight = true
+    let canJump = true
+    $(document).on("keydown", e => {
 
-    for (let i = 0; i < 20; i++) {
-        $(document).keydown(function () {
+        for (let i = 0; i < 20; i++) {
             for (let j = 0; j < 38; j++) {
                 element = board[i][j];
                 if (element.solid == true) {            //solid ja oder nein
-                    if (style(player, left) == style(element, right)) {
+                    if (player.left == j * 50) {
                         canMoveLeft = false;
                     }
                     else {
                         canMoveLeft = true
                     }
-                    if (style(player, right) == style(element, left)) {
+                    if (player.left + 50 == j * 50 + 50) {
                         canMoveRight = false;
                     }
                     else {
                         canMoveRight = true
                     }
-                    if (style(player, top) == style(element, bottom)) {
+                    if (player.top == i * 50) {
                         canJump = false;
                     }
                     else {
@@ -37,23 +78,27 @@ $(document).ready(function () {
                     }
                 }
             }
-
-        });
-    }
-    switch (e.code) {             //move
-        case "KeyW":
-            player.top -= 50;
-            break;
-        case "KeyA" && canMoveLeft == true:
-            player.left -= 50;
-            break;
-        case "KeyS":
-            player.top += 50;
-            break;
-        case "KeyD" && canMoveRight == true:
-            player.left += 50;
-            break;
-        default:
-            break;
-    }
+        }
+        switch (e.code) {             //move
+            case "KeyW":
+                player.top -= 50;
+                break;
+            case "KeyA":
+                if (canMoveLeft == true) {
+                    player.left -= 50;
+                    break;
+                }
+            case "KeyS":
+                player.top += 50;
+                break;
+            case "KeyD":
+                if (canMoveRight == true) {
+                    player.left += 50;
+                    break;
+                }
+            default:
+                break;
+        }
+        setPosition();
+    });
 });
