@@ -1,38 +1,39 @@
 let board = [];
 
 
-function generateBlock(row, column) {
+function generateBlock(solid, row, column) {
 	return {
+		solid: solid,
 		row: row,
 		column: column,
 	}
 }
 
 $(function() {
-	for(let i = 0; i < 8; i++) {
+	for(let i = 0; i < 20; i++) {
 
 		board [i] = [];
 
 		if(i % 2 == 0) {
-			for(let j = 0; j < 8; j++) {
+			for(let j = 0; j < 38; j++) {
 
 				if(j % 2  == 0) {
-					board [i][j] = generateBlock(i, j);
+					board [i][j] = generateBlock(true, i, j);
 
 				}
 				else {
-					board [i][j] = generateBlock(i, j);
+					board [i][j] = generateBlock(false, i, j);
 				}
 			}
 		}
 		else {
-			for(let j = 0; j < 8; j++) {
+			for(let j = 0; j < 38; j++) {
 
 				if(j % 2 == 0) {
-					board [i][j] = generateBlock(i, j);
+					board [i][j] = generateBlock(false, i, j);
 				}
 				else {
-					board [i][j] = generateBlock(i, j);
+					board [i][j] = generateBlock(true, i, j);
 				}
 			}
 		}
