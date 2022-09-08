@@ -1,0 +1,14 @@
+Blockdesign: 50x50
+Spieler 2 Blöcke groß
+Pixelgrafik
+Stil: Dschungel, Mittelalterlich, Düster, Mystisch, Entdecker
+Sicht: Boden, Decke, stationärer Charakter mit verschiebbarem Fenster
+Level 1 Bildschirm
+Sprung
+Ducken
+Fallen (Lock im Boden)
+Monster
+Kollision
+
+---
+Blöcke abbauen und craften
