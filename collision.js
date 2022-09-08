@@ -1,6 +1,5 @@
 
 //import board from "./board.js";
-console.log(board);
 
 let player = {
     left: 950,
@@ -19,7 +18,7 @@ function style(element, property) {
 
 console.log(board);
 
-let board = generateArray();
+
 $(document).ready(function () {
     setPosition();
     let element

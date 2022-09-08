@@ -21,10 +21,13 @@ function showBoard (board) {
 
 
 			if (board[e][d].solid == true) {
-				$('#board').append('<div class="solid"></div>');
+				$('#board').append('<div></div>');
 			} else {
-				$('#board').append('<div class="test"></div>');
+				$('#board').append('<div></div>');
 			}
+
+			console.log(e);
+			console.log(d);
 
 		}
 
