@@ -1,10 +1,42 @@
 let board = generateArray();
 
 let level1 = [{	blocktype: 'dirt',
+<<<<<<< Updated upstream
 					solid: true,
 					interactive: false,
 					row: 15,
 					column: 15,}];
+=======
+solid: true,
+interactive: false,
+row: 15,
+column: 15,}];
+
+let level2=[
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:9,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:10,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:10,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:11,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:11,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:11,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 14,	column:13,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 14,	column:14,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 14,	column:15,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:20,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:21,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:21,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:22,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:28,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:29,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:30,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:31,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:32,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:33,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:34,},
+{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:35,},
+];
+
+>>>>>>> Stashed changes
 
 
 $(document).ready(function () {
@@ -93,8 +125,17 @@ function generateBlock(blocktype, solid, interactive, row, column) {
 
 function arrayEditor (levelNum) {
 
+<<<<<<< Updated upstream
 	for(let d = 0; d < levelNum.length; d++) {
 		let blocktype = levelNum[d].blocktype;
+=======
+	for(let e = 0; e < board.length; e++){
+
+		for(let d = 0; d < board[e].length; d++) {
+			let blocktype = board[e][d].blocktype;
+				
+
+>>>>>>> Stashed changes
 				
 		if(blocktype == 'stone' || blocktype == 'dirt') {
 			board [levelNum[d].row][levelNum[d].column] = generateBlock(blocktype, true, false, levelNum[d].row, levelNum[d].column);
