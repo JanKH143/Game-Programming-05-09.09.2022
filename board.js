@@ -22,7 +22,32 @@ let level1=[
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:33,},
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:34,},
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:35,},
+{blocktype: 'key',	solid: false,	interactive:true,	row: 16,	column:20,},
 ];
+
+let bossFight=[
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:9,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:10,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:10,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:11,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:11,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:11,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 14,	column:13,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 14,	column:14,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 14,	column:15,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:20,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:21,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:21,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:22,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:28,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:29,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:30,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:31,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:32,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:33,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:34,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:35,},
+	];
 
 
 
@@ -130,6 +155,10 @@ function generateBlock(blocktype, solid, interactive, column, row) {
 }
 
 function arrayEditor(levelNum) {
+
+	if(levelNum == bossFight){
+		$('#board').addClass('boss');
+	}
 
 	for (let d = 0; d < levelNum.length; d++) {
 		let blocktype = levelNum[d].blocktype;

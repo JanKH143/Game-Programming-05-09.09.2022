@@ -136,8 +136,9 @@
 }
 
 .Key {
-    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-image: url(Bilder/Schlüssel\ 2.png);
     background-size: contain;
+    background-repeat: no-repeat;
 }
 
 
@@ -167,6 +168,10 @@
     position: absolute;
     top: 40px;
     left: 0px;
+}
+
+#board.boss {
+    background-image: url(Bilder/in-tempel-hintergrund.png);
 }
 
 #board>div {
