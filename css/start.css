@@ -11,11 +11,6 @@
     grid-template-rows: 50fr 10fr 25fr 5fr 10fr;
 }
 
-.menubutton {
-    position: absolute;
-    font-size: 50px;
-}
-
 #gameover {
     background-image: url(Bilder/gameover.png);
     background-repeat: no-repeat;
