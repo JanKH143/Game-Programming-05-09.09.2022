@@ -3,23 +3,18 @@
 console.log(board);
 
 let player = {
-    left: 950,
+    left: 960,
     top: 550,
 }
 
 function setPosition() {
     $("#player").css({ "left": player.left, "top": player.top });
 }
-function style(element, property) {
-    return getComputedStyle(element).property;
-}
 
-//CSS Wert erkennen
 
 
 console.log(board);
 
-let board = generateArray();
 $(document).ready(function () {
     setPosition();
     let element
@@ -30,7 +25,7 @@ $(document).ready(function () {
 
         for (let i = 0; i < 20; i++) {
 
-            for (let i = 0; i < 20; i++) {
+            for (let j = 0; j < 20; j++) {
                 $(document).keydown(e => {
                     for (let j = 0; j < 38; j++) {
                         element = board[i][j];
@@ -60,28 +55,27 @@ $(document).ready(function () {
                 );
             }
 
-
-            switch (e.code) {             //move
-                case "KeyW":
-                    player.top -= 50;
-                    break;
-                case "KeyA":
-                    if (canMoveLeft == true) {
-                        player.left -= 50;
-                        break;
-                    }
-                case "KeyS":
-                    player.top += 50;
-                    break;
-                case "KeyD":
-                    if (canMoveRight == true) {
-                        player.left += 50;
-                        break;
-                    }
-                default:
-                    break;
-            }
-            setPosition();
         };
+        switch (e.code) {             //move
+            case "KeyW":
+                player.top -= 50;
+                break;
+            case "KeyA":
+                if (canMoveLeft == true) {
+                    player.left -= 50;
+                    break;
+                }
+            case "KeyS":
+                player.top += 50;
+                break;
+            case "KeyD":
+                if (canMoveRight == true) {
+                    player.left += 50;
+                    break;
+                }
+            default:
+                break;
+        }
+        setPosition();
     });
 });
