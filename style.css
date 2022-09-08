@@ -45,9 +45,31 @@
     
 }
 
-
 .stone {
     background-image: url(Bilder/stein_wand.png);
+}
+
+.torch {
+    background-image: url(Bilder/fackel\ gif.gif);
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+
+.sign {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+}
+
+.stoneGround {
+    background-image: url(Bilder/stone\ ground.png);
+}
+
+.dirt {
+    background-image: url(Bilder/dirt.png);
+}
+
+.notFound {
+    background-color: red;
 }
 
 #player {
