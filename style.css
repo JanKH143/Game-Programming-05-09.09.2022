@@ -25,8 +25,7 @@
 #gameover {
     background-image: url(Bilder/gameover.png);
     background-repeat: no-repeat;
-    background-size: 101%;
-    
+    background-size: cover;
     
 }
 
@@ -40,23 +39,30 @@
     left: 765px;
 }
 
+
+
 .solid {
-    background-color: blue;
     width: 50px;
     height: 50px;
-}
-
-.test {
     background-color: black;
-    width: 50px;
-    height: 50px;
+    position: absolute;
 }
 
+#player {
+    width: 20px;
+    height: 20px;
+    background-color: rgb(211, 49, 49);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
 #board {
     border: 10px solid black;
     width: 1000px;
     height: 600px;
     display:flex;
+}
+
 }
 
 .credits {
