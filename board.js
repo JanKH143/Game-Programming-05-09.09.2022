@@ -1,7 +1,16 @@
 let board = generateArray();
 
+let level1 = [{	blocktype: 'dirt',
+					solid: true,
+					interactive: false,
+					row: 15,
+					column: 15,}];
+
+
 $(document).ready(function () {
+	//arrayEditor(level1);
 	showBoard(board);
+	
 
 });
 
@@ -57,52 +66,18 @@ function generateArray () {
 				/*Zweite for-Schleife kreirt die Objekte in der Array und setzt solid auf true oder false*/
 
 				if(i > 17) {
-					board [i][j] = generateBlock('stone', false, true, i, j);
-
+					board [i][j] = generateBlock('stone', true, false, i, j);
 				}
-				else if(j == 0 && i > 10) {
-					board [i][j] = generateBlock('stone', false, true, i, j);
-
+				else if(j == 18) {
+					board [i][j] = generateBlock('stone', true, false, i, j);
 				}
-				else if(j == 37 && i > 15) {
-					board [i][j] = generateBlock('stone', false, true, i, j);
-
-				}
-				else if((j == 16 && i > 16 )||(j == 17 && i > 16)) {
-					board [i][j] = generateBlock('stone', false, true, i, j);
-
-				}
+				
 				else {
-					board [i][j] = generateBlock('air', false, false, i, j);
-
-					
+					board [i][j] = generateBlock('air', false, false, i, j);	
 				}
 			}
 	}
-
-
 	return board;
-
-}
-
-function generateEmptyArray () {
-	let emptyBoard = [];
-	for(let i = 0; i < 20; i++) {
-
-		/*Erste for-Schleife kreirt die "unter Arrays"*/
-		board [i] = [];
-
-			for(let j = 0; j < 38; j++) {
-
-				//Erstellt leeres board
-
-					board [i][j] = generateBlock(false, i, j);
-
-			}
-	}
-
-	return board;
-
 }
 
 function generateBlock(blocktype, solid, interactive, row, column) {
@@ -118,12 +93,18 @@ function generateBlock(blocktype, solid, interactive, row, column) {
 
 function arrayEditor (levelNum) {
 
-	let level1 = [{	solid: true,
-					row: 15,
-					column: 15,}];
-
-
+	for(let d = 0; d < levelNum.length; d++) {
+		let blocktype = levelNum[d].blocktype;
+				
+		if(blocktype == 'stone' || blocktype == 'dirt') {
+			board [levelNum[d].row][levelNum[d].column] = generateBlock(blocktype, true, false, levelNum[d].row, levelNum[d].column);
+			console.log('stone');
+		}
+		else {
+			console.log('Error: ArrayEditor - not found' + levelNum[d].blocktype);	
+		}
+				
+	}
+									
 	return levelNum
-
-
 }
