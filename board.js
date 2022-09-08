@@ -35,6 +35,7 @@ function showBoard (board) {
 			//console.log(e);
 			//console.log(d);
 
+
 		}
 
 		
