@@ -1,0 +1,32 @@
+body{
+	display: grid; 
+	grid-template-rows: 5vh 25vh 40vh 15vh 15vh  ; 
+	grid-template-columns: 15vw 10vw 50vw 10vw 15vw; 
+	margin: 0;
+	background-color: black;
+}
+#framepacman{
+	grid-row: 1/5;
+	grid-column: 1/6;
+}
+#spielfigur {
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+}
+.dirO{background-image: url('pictures/pacmanO.png');
+    background-size: contain;
+	background-repeat: no-repeat;
+    position: absolute;}
+.dirU{background-image: url('pictures/pacmanU.png');
+    background-size: contain;
+	background-repeat: no-repeat;
+    position: absolute;}
+.dirR{background-image: url('pictures/pacmanR.png');
+    background-size: contain;
+	background-repeat: no-repeat;
+    position: absolute;}
+.dirL{background-image: url('pictures/pacmanL.png');
+    background-size: contain;
+	background-repeat: no-repeat;
+    position: absolute;}
