@@ -13,16 +13,29 @@ function showBoard (board) {
 	for(let e = 0; e < board.length; e++){
 
 		for(let d = 0; d < board[e].length; d++) {
+			let blocktype = board[e][d].blocktype;
 
-
-			if (board[e][d].blocktype == 'stone') {
+			if (blocktype == 'stone') {
 				$('#board').append('<div class="solid stone">'+board[e][d].row+board[e][d].column+'</div>');
 			} 
-			else if (board[e][d].blocktype == 'air') {
+			else if (blocktype == 'torch') {
+				$('#board').append('<div class="solid torch">'+board[e][d].row+board[e][d].column+'</div>');
+			} 
+			else if (blocktype == 'sign') {
+				$('#board').append('<div class="solid sign">'+board[e][d].row+board[e][d].column+'</div>');
+			} 
+			else if (blocktype == 'stoneGround') {
+				$('#board').append('<div class="solid stoneGround">'+board[e][d].row+board[e][d].column+'</div>');
+			}
+			else if (blocktype == 'dirt') {
+				$('#board').append('<div class="solid dirt">'+board[e][d].row+board[e][d].column+'</div>');
+			}
+			else if (blocktype == 'air') {
 				$('#board').append('<div>'+board[e][d].row+board[e][d].column+'</div>');
 			}
 			else {
-				$('#board').append('<div>'+ 'Texture unavailable'+'</div>');
+				$('#board').append('<div class="notFound">' + 'Texture not found' + '</div>');
+				console.log('Error: Wrong blocktype used/Texture not found')
 			}
 
 
