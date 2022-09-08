@@ -21,6 +21,7 @@ $(document).ready(function () {
     let canMoveLeft = true
     let canMoveRight = true
     let canJump = true
+    let canFall = true
     $(document).on("keydown", e => {
 
         for (let i = 0; i < 20; i++) {

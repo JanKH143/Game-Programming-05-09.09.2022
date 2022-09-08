@@ -26,7 +26,7 @@
     background-image: url(Bilder/gameover.png);
     background-repeat: no-repeat;
     background-size: cover;
-    
+
 }
 
 #startbutton {
@@ -53,20 +53,22 @@
     left: 0px;
     top: 0px;
     background-size: contain;
+    background-color: black;
+
 }
 
 #board {
     border: 10px solid black;
     width: 1900px;
     height: 1000px;
-    display:flex;
-	flex-flow: row wrap;
+    display: flex;
+    flex-flow: row wrap;
     position: absolute;
     top: 40px;
     left: 0px;
 }
 
-#board >div {
+#board>div {
     width: 50px;
     height: 50px;
 }
@@ -74,9 +76,10 @@
 
 
 
-.playerStandingLeft{
+.playerStandingLeft {
     background-image: url(Bilder/player_standing_left.png);
 }
+
 .playerStandingRight {
     background-image: url(Bilder/player_standing_right.png);
 }
@@ -89,23 +92,21 @@
 }
 
 #logik {
-    left:19%;
+    left: 19%;
     position: absolute;
 }
 
 #design {
-    left:40%;
+    left: 40%;
     width: 20%;
     position: absolute;
 }
 
 #coding {
-    right:20%;
+    right: 20%;
     position: absolute;
 }
 
 .center {
     text-align: center;
 }
-
-
