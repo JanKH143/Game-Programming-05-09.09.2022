@@ -68,9 +68,7 @@
 }
 
 
-#spielfigur {
-    position: absolute;
-}
+
 
 .playerStandingLeft{
     background-image: url("Bilder/player_standing_left.png");
