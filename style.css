@@ -115,6 +115,32 @@
     background-size: contain;
 }
 
+.closedDoorUpper {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
+}
+
+.closedDoorLower {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
+}
+
+.openedDoorUpper {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
+}
+
+.openedDoorLower {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
+}
+
+.Key {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
+}
+
+
 .notFound {
     background-color: red;
 }

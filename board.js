@@ -59,6 +59,21 @@ function showBoard (board) {
 			else if (blocktype == 'dirt') {
 				$('#board').append('<div class="solid dirt">'+board[e][d].row+board[e][d].column+'</div>');
 			}
+			else if (blocktype == 'closedDoorUpper') {
+				$('#board').append('<div class="solid closedDoorUpper">'+board[e][d].row+board[e][d].column+'</div>');
+			}
+			else if (blocktype == 'closedDoorLower') {
+				$('#board').append('<div class="solid closedDoorLower">'+board[e][d].row+board[e][d].column+'</div>');
+			}
+			else if (blocktype == 'openedDoorUpper') {
+				$('#board').append('<div class="solid openedDoorUpper">'+board[e][d].row+board[e][d].column+'</div>');
+			}
+			else if (blocktype == 'openedDoorLower') {
+				$('#board').append('<div class="solid openedDoorLower">'+board[e][d].row+board[e][d].column+'</div>');
+			}
+			else if (blocktype == 'key') {
+				$('#board').append('<div class="solid Key">'+board[e][d].row+board[e][d].column+'</div>');
+			}
 			else if (blocktype == 'air') {
 				$('#board').append('<div>'+board[e][d].row+board[e][d].column+'</div>');
 			}
@@ -114,8 +129,14 @@ function arrayEditor (levelNum) {
 		for(let d = 0; d < levelNum.length; d++) {
 			let blocktype = levelNum[d].blocktype;
 				
-		if(blocktype == 'stone' || blocktype == 'dirt') {
+		if(blocktype == 'stone' || blocktype == 'dirt' || blocktype == 'torch' || blocktype == 'sign' || blocktype == 'stoneGround') {
 			board [levelNum[d].row][levelNum[d].column] = generateBlock(blocktype, true, false, levelNum[d].row, levelNum[d].column);
+		}
+		else if(blocktype == 'closedDoor') {
+			board [levelNum[d].row][levelNum[d].column] = generateBlock(blocktype, true, true, levelNum[d].row, levelNum[d].column);
+		}
+		else if(blocktype == 'openedDoor' || blocktype == 'key') {
+			board [levelNum[d].row][levelNum[d].column] = generateBlock(blocktype, true, true, levelNum[d].row, levelNum[d].column);
 		}
 		else {
 			console.log('Error: ArrayEditor - not found' + levelNum[d].blocktype);	

@@ -118,14 +118,14 @@ $(document).ready(e => {
                 if (player.dir == 'L') {
                     if (testBlock(player.x - 1, player.y - 1) == false && testBlock(player.x - 1, player.y - 2) == false && testBlock(player.x, player.y - 2) == false) {
                         player.x--;
-                        player.y++;
+                        player.y--;
                         setPosition();
                     }
                 }
                 else {
                     if (testBlock(player.x + 1, player.y - 1) == false && testBlock(player.x + 1, player.y - 2) == false && testBlock(player.x, player.y - 2) == false) {
-                        player.x--;
-                        player.y++;
+                        player.x++;
+                        player.y--;
                         setPosition();
                     }
                 }
