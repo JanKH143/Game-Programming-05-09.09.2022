@@ -1,18 +1,7 @@
 let board = generateArray();
 
-let level1 = [{	blocktype: 'dirt',
-<<<<<<< Updated upstream
-					solid: true,
-					interactive: false,
-					row: 15,
-					column: 15,}];
-=======
-solid: true,
-interactive: false,
-row: 15,
-column: 15,}];
 
-let level2=[
+let level1=[
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:9,},
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:10,},
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:10,},
@@ -36,11 +25,10 @@ let level2=[
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:35,},
 ];
 
->>>>>>> Stashed changes
 
 
 $(document).ready(function () {
-	//arrayEditor(level1);
+	arrayEditor(level1);
 	showBoard(board);
 	
 
@@ -100,9 +88,6 @@ function generateArray () {
 				if(i > 17) {
 					board [i][j] = generateBlock('stone', true, false, i, j);
 				}
-				else if(j == 18) {
-					board [i][j] = generateBlock('stone', true, false, i, j);
-				}
 				
 				else {
 					board [i][j] = generateBlock('air', false, false, i, j);	
@@ -125,21 +110,12 @@ function generateBlock(blocktype, solid, interactive, row, column) {
 
 function arrayEditor (levelNum) {
 
-<<<<<<< Updated upstream
-	for(let d = 0; d < levelNum.length; d++) {
-		let blocktype = levelNum[d].blocktype;
-=======
-	for(let e = 0; e < board.length; e++){
 
-		for(let d = 0; d < board[e].length; d++) {
-			let blocktype = board[e][d].blocktype;
-				
-
->>>>>>> Stashed changes
+		for(let d = 0; d < levelNum.length; d++) {
+			let blocktype = levelNum[d].blocktype;
 				
 		if(blocktype == 'stone' || blocktype == 'dirt') {
 			board [levelNum[d].row][levelNum[d].column] = generateBlock(blocktype, true, false, levelNum[d].row, levelNum[d].column);
-			console.log('stone');
 		}
 		else {
 			console.log('Error: ArrayEditor - not found' + levelNum[d].blocktype);	
