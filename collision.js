@@ -50,11 +50,8 @@ $(document).ready(function () {
                             }
                         }
                     }
-                }
-
-                );
+                });
             }
-
         };
         switch (e.code) {             //move
             case "KeyW":

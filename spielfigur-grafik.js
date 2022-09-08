@@ -1,17 +1,35 @@
-$(document).on("keydown", e => {
-    if (e.code == KeyA) {
-        
-    }
-    if (e.code == KeyD) {
+$(document).ready(function () {
+    $(document).on("keydown", e => {
+        /*switch (e.code) { 
+    
+            case "KeyA":
+    
+                break;
+    
+            case "KeyD":
+    
+                break;
+    
+            default:
+                break;
+        }*/
+    })
 
-    }
-})
+    $(document).on("keyup", e => {
+        switch (e.code) {
+            case "KeyA":
+                $("#player").removeClass("playerStandingRight");
+                $("#player").addClass("playerStandingLeft");
+                break;
 
-$(document).on("keyup", e=> {
-    if (e.code == KeyA) {
-        $("#player").addClass("playerStandingLeft");
-    }
-    if (e.code == KeyD) {
-        $("#player").addClass("playerStandingRight");
-    }
+            case "KeyD":
+                $("#player").removeClass("playerStandingLeft");
+                $("#player").addClass("playerStandingRight");
+                break;
+
+            default:
+                break;
+        }
+
+    })
 })
