@@ -42,7 +42,7 @@
 
 
 .solid {
-    background-color: black;
+    background-image: url(Bilder/stein_wand.png);
 }
 
 #player {

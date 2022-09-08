@@ -24,9 +24,6 @@ function showBoard (board) {
 				$('#board').append('<div>'+board[e][d].row+board[e][d].column+'</div>');
 			}
 
-			//console.log(e);
-			//console.log(d);
-
 
 		}
 
@@ -44,9 +41,21 @@ function generateArray () {
 		//if(i % 2 == 0) {
 			for(let j = 0; j < 38; j++) {
 
-				/*Zweite for-Schleife kreirt die "zweit Arrays"*/
+				/*Zweite for-Schleife kreirt die Objekte in der Array und setzt solid auf true oder false*/
 
-				if(i > 18) {
+				if(i > 16) {
+					board [i][j] = generateBlock(true, i, j);
+
+				}
+				else if(j == 0) {
+					board [i][j] = generateBlock(true, i, j);
+
+				}
+				else if(j == 37) {
+					board [i][j] = generateBlock(true, i, j);
+
+				}
+				else if(i == 0) {
 					board [i][j] = generateBlock(true, i, j);
 
 				}
@@ -56,23 +65,8 @@ function generateArray () {
 					
 				}
 			}
-		//}
-		/*else {
-			for(let j = 0; j < 38; j++) {
-
-				/*Dritte for-Schleife kreirt auch "zweit Arrays"*//*
-
-				if(j % 2 == 0) {
-					board [i][j] = generateBlock(false, i, j);
-				}
-				else {
-					board [i][j] = generateBlock(true, i, j);
-				}
-			}
-		}*/
 	}
 
-	console.log(board);
 
 	return board;
 
