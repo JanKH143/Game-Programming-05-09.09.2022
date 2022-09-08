@@ -1,8 +1,7 @@
 var board = generateStandardBoard();
 
-var levelNum = 1;
-
 let level1 = [
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 0, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 9, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 10, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 10, },
@@ -25,6 +24,8 @@ let level1 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 34, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 35, },
     { blocktype: 'key', solid: false, interactive: false, row: 16, column: 20, },
+    { blocktype: 'door', solid: false, interactive: true, row: 17, column: 37, },
+    { blocktype: 'door', solid: false, interactive: true, row: 16, column: 37, },
 ];
 
 let bossFight = [
@@ -52,14 +53,13 @@ let bossFight = [
 ];
 
 $(document).ready(function () {
-    arrayEditor(level1);
+    loadBoard();
     showBoard(board);
 });
 
 
 function showBoard(board) {
     console.log(board);
-    /*Zeigt das Spielfeld an*/
 
     for (let e = 0; e < board.length; e++) {
 
@@ -67,47 +67,6 @@ function showBoard(board) {
             let blocktype = board[e][d].blocktype;
 
             $('#board').append('<div class="'+blocktype+'">' + board[e][d].row + board[e][d].column + '</div>');
-/*
-            if (blocktype == 'stone') {
-                $('#board').append('<div class="solid stone">' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else if (blocktype == 'torch') {
-                $('#board').append('<div class="solid torch">' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else if (blocktype == 'sign') {
-                $('#board').append('<div class="solid sign">' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else if (blocktype == 'stoneGround') {
-                $('#board').append('<div class="solid stoneGround">' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else if (blocktype == 'dirt') {
-                $('#board').append('<div class="solid dirt">' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else if (blocktype == 'closedDoorUpper') {
-                $('#board').append('<div class="solid closedDoorUpper">' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else if (blocktype == 'closedDoorLower') {
-                $('#board').append('<div class="solid closedDoorLower">' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else if (blocktype == 'openedDoorUpper') {
-                $('#board').append('<div class="solid openedDoorUpper">' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else if (blocktype == 'openedDoorLower') {
-                $('#board').append('<div class="solid openedDoorLower">' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else if (blocktype == 'key') {
-                $('#board').append('<div class="solid Key">' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else if (blocktype == 'air') {
-                $('#board').append('<div>' + board[e][d].row + board[e][d].column + '</div>');
-            }
-            else {
-                $('#board').append('<div class="notFound">' + 'Texture not found' + '</div>');
-                console.log('Error: Wrong blocktype used/Texture not found')
-            }
-            */
-
-
         }
 
 
@@ -118,12 +77,9 @@ function generateStandardBoard() {
     let board = [];
     for (let i = 0; i < 20; i++) {
 
-        /*Erste for-Schleife kreirt die "unter Arrays"*/
         board[i] = [];
 
         for (let j = 0; j < 38; j++) {
-
-            /*Zweite for-Schleife kreirt die Objekte in der Array und setzt solid auf true oder false*/
 
             if (i > 17) {
                 board[i][j] = generateBlock('stone', true, false, i, j);
@@ -146,53 +102,25 @@ function generateBlock(blocktype, solid, interactive, column, row) {
     }
 }
 
-function arrayEditor(level) {
-
-    switch(levelNum) {
+function loadBoard() {
+    let newBoard;
+    switch(player.level) {
         case 1:
+            newBoard = level1;
             break;
         case 2:
-            $('#board').addClass('boss');
+            newBoard = bossFight;
+            //$('#board').addClass('boss');
             break;
         default:
+            newBoard = level1;
             break;
     }
 
+    console.log(newBoard);
+    for (let d = 0; d < newBoard.length; d++) {
+        let blocktype = newBoard[d].blocktype;
 
-    for (let d = 0; d < level.length; d++) {
-        let blocktype = level[d].blocktype;
-
-        board[level[d].row][level[d].column] = generateBlock(blocktype, level[d].solid, level[d].interactive, level[d].row, level[d].column);
-
-        /*
-        if (blocktype == 'stone' || blocktype == 'dirt' || blocktype == 'torch' || blocktype == 'sign' || blocktype == 'stoneGround') {
-            board[level[d].row][level[d].column] = generateBlock(blocktype, true, false, level[d].row, level[d].column);
-        }
-        else if (blocktype == 'closedDoor') {
-            board[level[d].row][level[d].column] = generateBlock(blocktype, true, true, level[d].row, level[d].column);
-        }
-        else if (blocktype == 'openedDoor' || blocktype == 'key') {
-            board[level[d].row][level[d].column] = generateBlock(blocktype, false, true, level[d].row, level[d].column);
-        }
-        else {
-            console.log('Error: ArrayEditor - not found' + level[d].blocktype);
-        }
-        */
-
+        board[newBoard[d].row][newBoard[d].column] = generateBlock(blocktype, newBoard[d].solid, newBoard[d].interactive, newBoard[d].row, newBoard[d].column);
     }
-/*
-    for (let d = 0; d < level.length; d++) {
-        let blocktype = level[d].blocktype;
-
-        if (blocktype == 'stone' || blocktype == 'dirt')
-        {
-            board[level[d].row][level[d].column] = generateBlock(blocktype, true, false, level[d].row, level[d].column);
-            console.log('stone');
-
-            
-
-            return level
-        }
-    }
-    */
 }

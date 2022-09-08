@@ -18,6 +18,36 @@
     height: 50px;
 }
 
+
+#player {
+    z-index: 1;
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+.playerStandingLeft {
+    background-image: url('../img/charakter/player_standing_left.png');
+}
+
+.playerStandingRight {
+    background-image: url('../img/charakter/player_standing_right.png');
+}
+
+.playerWalkingLeft {
+    background-image: url('../img/charakter/player_walking_left.png');
+}
+
+.playerWalkingRight {
+    background-image: url('../img/charakter/player_walking_right.png');
+}
+
+
+
 .stone {
     background-image: url("../img/gegenstaende/Blöcke/stein\ wand.png");
     background-size: contain;
@@ -67,4 +97,8 @@
     background-image: url("../img/gegenstaende/Schlüssel/key2.png");
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+.door {
+    background-color: blue;
 }
