@@ -3,9 +3,9 @@ function style(element, property) {
 }
 
 //CSS Wert erkennen
-let board = generateArray();
+
 console.log(board);
-showBoard(board);
+
 
 $(document).ready(function () {
     let element;

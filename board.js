@@ -1,3 +1,7 @@
+let board = generateArray();
+showBoard(board);
+
+
 function generateBlock(solid, row, column) {
 	/*Befüllt die "unter Arrays" mit Objekten*/
 	return {
@@ -17,13 +21,10 @@ function showBoard (board) {
 
 
 			if (board[e][d].solid == true) {
-				console.log("test1");
 				$('#board').append('<div class="solid"></div>');
 			} else {
-				console.log("test2");
 				$('#board').append('<div class="test"></div>');
 			}
-			console.log("test");
 
 		}
 

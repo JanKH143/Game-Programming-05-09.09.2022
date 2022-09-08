@@ -57,6 +57,7 @@
     width: 1000px;
     height: 600px;
     display:flex;
+}
 
 .credits {
     font-size: 30px;
@@ -81,3 +82,5 @@
 .center {
     text-align: center;
 }
+
+
