@@ -1,6 +1,5 @@
 
 //import board from "./board.js";
-console.log(board);
 
 let player = {
     left: 960,
@@ -14,6 +13,7 @@ function setPosition() {
 
 
 console.log(board);
+
 
 $(document).ready(function () {
     setPosition();
