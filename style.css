@@ -49,8 +49,8 @@
 }
 
 #player {
-    width: 20px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     background-color: rgb(211, 49, 49);
     position: absolute;
     left: 0px;
@@ -59,9 +59,12 @@
 
 #board {
     border: 10px solid black;
-    width: 1000px;
-    height: 600px;
+    width: 1900px;
+    height: 1000px;
     display:flex;
+    position: absolute;
+    top: 40px;
+    left: 0px;
 }
 
 
