@@ -26,32 +26,31 @@ $(document).ready(function () {
 
         for (let i = 0; i < 20; i++) {
 
-            for (let j = 0; j < 20; j++) {
-                $(document).keydown(e => {
-                    for (let j = 0; j < 38; j++) {
-                        element = board[i][j];
-                        if (element.solid == true) {            //solid ja oder nein
-                            if (player.left == j * 50) {
-                                canMoveLeft = false;
-                            }
-                            else {
-                                canMoveLeft = true
-                            }
-                            if (player.left + 50 == j * 50 + 50) {
-                                canMoveRight = false;
-                            }
-                            else {
-                                canMoveRight = true
-                            }
-                            if (player.top == i * 50) {
-                                canJump = false;
-                            }
-                            else {
-                                canJump = true
-                            }
-                        }
+            for (let j = 0; j < 38; j++) {
+
+                element = board[i][j];
+                if (element.solid == true) {            //solid ja oder nein
+                    if (player.left == j * 50) {
+                        canMoveLeft = false;
                     }
-                });
+                    else {
+                        canMoveLeft = true
+                    }
+                    if (player.left + 50 == j * 50 + 50) {
+                        canMoveRight = false;
+                    }
+                    else {
+                        canMoveRight = true
+                    }
+                    if (player.top == i * 50) {
+                        canJump = false;
+                    }
+                    else {
+                        canJump = true
+                    }
+                }
+
+
             }
         };
         switch (e.code) {             //move
