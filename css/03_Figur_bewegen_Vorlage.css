@@ -1,0 +1,7 @@
+#player {
+    position: absolute;
+    background-image: url("mo.png");
+    width: 100px;
+    background-repeat: no-repeat;
+}
+
