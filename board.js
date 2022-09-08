@@ -26,8 +26,7 @@ function showBoard (board) {
 				$('#board').append('<div></div>');
 			}
 
-			console.log(e);
-			console.log(d);
+
 
 		}
 
