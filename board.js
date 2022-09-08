@@ -22,7 +22,32 @@ let level1=[
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:33,},
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:34,},
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:35,},
+{blocktype: 'key',	solid: false,	interactive:false,	row: 16,	column:20,},
 ];
+
+let bossFight=[
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:9,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:10,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:10,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:11,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:11,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:11,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 14,	column:13,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 14,	column:14,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 14,	column:15,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:20,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:21,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:21,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:22,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:28,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:29,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:30,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:31,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:32,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 15,	column:33,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:34,},
+	{blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:35,},
+	];
 
 
 
@@ -131,6 +156,10 @@ function generateBlock(blocktype, solid, interactive, column, row) {
 
 function arrayEditor(levelNum) {
 
+	if(levelNum == bossFight){
+		$('#board').addClass('boss');
+	}
+
 	for (let d = 0; d < levelNum.length; d++) {
 		let blocktype = levelNum[d].blocktype;
 
@@ -148,7 +177,7 @@ function arrayEditor(levelNum) {
 			board [levelNum[d].row][levelNum[d].column] = generateBlock(blocktype, true, true, levelNum[d].row, levelNum[d].column);
 		}
 		else if(blocktype == 'openedDoor' || blocktype == 'key') {
-			board [levelNum[d].row][levelNum[d].column] = generateBlock(blocktype, true, true, levelNum[d].row, levelNum[d].column);
+			board [levelNum[d].row][levelNum[d].column] = generateBlock(blocktype, false, true, levelNum[d].row, levelNum[d].column);
 		}
 		else {
 			console.log('Error: ArrayEditor - not found' + levelNum[d].blocktype);

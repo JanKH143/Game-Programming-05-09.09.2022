@@ -103,6 +103,9 @@ function testBlock(x, y) {
 
         return board[y][x].solid;
 
+function testBlock(y, x) {
+    console.log(board[x][y].solid)
+        return board[x][y].solid;
 }
 
 function fallcheck() {
