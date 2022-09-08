@@ -98,12 +98,11 @@ function setPosition() {
     fallcheck();
 }
 
-function testBlock(y, x) {
+function testBlock(x, y) {
+    if(!board[x] && !board[x][y]) return false;
 
-    if (board[x] && board[x][y]) {
-        return board[x][y].solid;
-    }
-    else return false;
+        return board[y][x].solid;
+
 }
 
 function fallcheck() {
@@ -118,6 +117,7 @@ $(document).ready(e => {
         switch (e.code) {
             case "KeyW":
                 if (player.dir == 'L') {
+                    
                     if (testBlock(player.x - 1, player.y - 1) == false && testBlock(player.x - 1, player.y - 2) == false && testBlock(player.x, player.y - 2) == false) {
                         player.x--;
                         player.y--;
@@ -126,6 +126,8 @@ $(document).ready(e => {
                 }
                 else {
                     if (testBlock(player.x + 1, player.y - 1) == false && testBlock(player.x + 1, player.y - 2) == false && testBlock(player.x, player.y - 2) == false) {
+                        //if player x +2 {}
+                        //else{
                         player.x++;
                         player.y--;
                         setPosition();
@@ -137,17 +139,16 @@ $(document).ready(e => {
             case "KeyA":
                 if (testBlock(player.x - 1, player.y) == false && testBlock(player.x - 1, player.y - 1) == false) {
                     player.x--;
-                    player.dir = 'L';
                     setPosition();
                 }
-
+                player.dir = 'L';
                 break;
             case "KeyD":
                 if (testBlock(player.x + 1, player.y) == false && testBlock(player.x + 1, player.y - 1) == false) {
                     player.x++;
-                    player.dir = 'R';
                     setPosition();
                 }
+                player.dir = 'R';
                 break;
             default:
                 break;
