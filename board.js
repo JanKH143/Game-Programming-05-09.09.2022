@@ -19,9 +19,9 @@ function showBoard (board) {
 
 
 			if (board[e][d].solid == true) {
-				$('#board').append('<div class="solid">'/*+board[e][d].row+board[e][d].column+'</div>'*/);
+				$('#board').append('<div class="solid">'+board[e][d].row+board[e][d].column+'</div>');
 			} else {
-				$('#board').append('<div>'/*+board[e][d].row+board[e][d].column+'</div>'*/);
+				$('#board').append('<div>'+board[e][d].row+board[e][d].column+'</div>');
 			}
 
 
