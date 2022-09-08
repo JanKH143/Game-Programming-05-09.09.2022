@@ -7,17 +7,44 @@
     border-radius: 20px;
 }
 
+#credits{
+    background-image: url(Bilder/credit-screen.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 #backbutton {
     position: absolute;
     text-align: center;
-    line-height: 60px;
+    height: 70px;
     font-size: 30px;
-    width: 200px;
-    top: 2%;
-    left: 2%;
+    width: 240px;
+    top: 1000px;;
+    left: 20px;
     border: 5px;
-    background-color: aqua;
     border-radius: 20px;
+}
+
+#homebutton{
+    background-image: url(Bilder/Kleines_Haus.png);
+    position: absolute;
+    background-size: cover;
+    height:75px;
+    width: 75px;
+    left: 10px;
+    z-index: 1;
+    top: 50px;
+}
+
+#closebutton{
+    background-image: url(Bilder/close.png);
+    position: absolute;
+    background-size: cover;
+    height:75px;
+    width: 75px;
+    right: 0px;
+    z-index: 1;
+    top: 10px;
 }
 
 #gameover {
@@ -87,6 +114,32 @@
     background-image: url(Bilder/dirt.png);
     background-size: contain;
 }
+
+.closedDoorUpper {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
+}
+
+.closedDoorLower {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
+}
+
+.openedDoorUpper {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
+}
+
+.openedDoorLower {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
+}
+
+.Key {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
+}
+
 
 .notFound {
     background-color: red;
