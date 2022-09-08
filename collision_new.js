@@ -36,13 +36,12 @@ function generateArray() {
     let board = [];
     for (let i = 0; i < 20; i++) {
 
-        /*Erste for-Schleife kreirt die "unter Arrays"
+      
         board[i] = [];
 
         //if(i % 2 == 0) {
         for (let j = 0; j < 38; j++) {
 
-            /*Zweite for-Schleife kreirt die Objekte in der Array und setzt solid auf true oder false
 
             if (i > 16) {
                 board[i][j] = generateBlock(true, i, j);
@@ -74,7 +73,6 @@ function generateArray() {
 }
 
 function generateBlock(solid, row, column) {
-    /*Befüllt die "unter Arrays" mit Objekten
     return {
         solid: solid,
         row: row,
@@ -82,26 +80,28 @@ function generateBlock(solid, row, column) {
     }
 }
 
-
 */
+
 
 let player = {
     dir: 'R',
-    x: 10,
-    y: 100
+    x: 4,
+    y: 17,
 
 };
 
 
 function setPosition() {
-    $('#spielfigur').css("top", player.x * 50);
-    $('#spielfigur').css("left", player.y * 50 - 40);
-    $('#spielfigur').addClass(dir);
-    fallcheck();
+    $('#player').css("top", player.y * 50);
+    $('#player').css("left", player.x * 50 - 40);
+    $('#player').addClass(player.dir);
+    // fallcheck();
 }
 
 function testBlock(x, y) {
-    return board[x][y].solid;
+    if (board[x] && board[x][y]) {
+        return board[x][y].solid;
+    }
 }
 
 function fallcheck() {
@@ -111,6 +111,7 @@ function fallcheck() {
     }
 }
 $(document).ready(e => {
+    setPosition();
     $(document).on('keydown', e => {
         switch (e.code) {
             case "KeyW":
@@ -132,6 +133,7 @@ $(document).ready(e => {
 
                 break;
             case "KeyA":
+                console.log(player);
                 if (testBlock(player.x - 1, player.y) == false && testBlock(player.x - 1, player.y - 1) == false) {
                     player.x--;
                     dir = 'L';
@@ -140,7 +142,7 @@ $(document).ready(e => {
 
                 break;
             case "KeyD":
-                if (testBlock(player.x - 1, player.y) == true && testBlock(player.x - 1, player.y - 1) == true) {
+                if (testBlock(player.x + 1, player.y) == false && testBlock(player.x + 1, player.y - 1) == false) {
                     player.x++;
                     dir = 'R'
                     setPosition();
@@ -148,10 +150,7 @@ $(document).ready(e => {
                 break;
             default:
                 break;
-
         }
-
-    })
-
-})
+    });
+});
 
