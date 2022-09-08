@@ -1,15 +1,15 @@
-#playerr {
+#monster1 {
     position: absolute;
-    background-image: url('../images/mo.png');
+    background-image: url('../img/charakter/mo_left.png');
     width: 100px;
     height: 50px;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-#player2 {
+#monster2 {
     position: absolute;
-    background-image: url("../images/moreturn.png");
+    background-image: url("../img/charakter/mo_right.png");
     width: 100px;
     height: 50px;
     background-repeat: no-repeat;
