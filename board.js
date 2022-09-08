@@ -1,5 +1,10 @@
 let board = generateArray();
+
+$(document).ready(function () {
+
 showBoard(board);
+
+});
 
 
 function generateBlock(solid, row, column) {
@@ -12,22 +17,23 @@ function generateBlock(solid, row, column) {
 }
 
 function showBoard (board) {
-	console.log(board.length);
+	console.log(board);
 	/*Zeigt das Spielfeld an*/
 
 	for(let e = 0; e < board.length; e++){
 
 		for(let d = 0; d < board[e].length; d++) {
 
+			console.log($('#board'));
 
 			if (board[e][d].solid == true) {
-				$('#board').append('<div></div>');
+				$('#board').append('<div class="solid"></div>');
 			} else {
-				$('#board').append('<div></div>');
+				$('#board').append('<div class="solid"></div>');
 			}
 
-			console.log(e);
-			console.log(d);
+			//console.log(e);
+			//console.log(d);
 
 		}
 
