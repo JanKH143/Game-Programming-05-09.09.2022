@@ -1,6 +1,6 @@
 #startscreen {
-    width:90em;
-    height:60em;
+    width: 90em;
+    height: 60em;
     border: 10px solid black;
     background-image: url("../img/gegenstaende/Hintergründe/start-screen.png");
     background-size: contain;
@@ -18,7 +18,7 @@
 #gameover {
     background-image: url(Bilder/gameover.png);
     background-repeat: no-repeat;
-    background-size: 101%;
+    background-size: 100%;
 
 }
 
