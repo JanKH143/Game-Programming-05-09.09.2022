@@ -59,6 +59,8 @@
     top: 0px;
     background-size: contain;
 
+    background-repeat: no-repeat;
+
 }
 
 #board {
@@ -87,6 +89,14 @@
 
 .playerStandingRight {
     background-image: url(Bilder/player_standing_right.png);
+}
+
+.playerWalkingLeft {
+    background-image: url(Bilder/player_walking_left.png);
+}
+
+.playerWalkingRight {
+    background-image: url(Bilder/player_walking_right.png);
 }
 
 
