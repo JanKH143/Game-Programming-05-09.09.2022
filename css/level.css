@@ -1,8 +1,104 @@
+* {
+    margin: 0em;
+}
+
 #board {
-    width: 90em;
-    height: 60em;
+    width: 1900px;
+    height: 1000px;
     border: 10px solid black;
     background-image: url("../img/gegenstaende/Hintergründe/Hintergrund-djungel.png");
+    display: flex;
+    flex-flow: row wrap;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#board>div {
+    width: 50px;
+    height: 50px;
+}
+
+
+#player {
+    z-index: 1;
+    width: 50px;
+    height: 100px;
+    position: absolute;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+
+
+.playerStandingLeft {
+    background-image: url('../img/charakter/player_standing_left.png');
+}
+
+.playerStandingRight {
+    background-image: url('../img/charakter/player_standing_right.png');
+}
+
+.playerWalkingLeft {
+    background-image: url('../img/charakter/player_walking_left.png');
+}
+
+.playerWalkingRight {
+    background-image: url('../img/charakter/player_walking_right.png');
+}
+
+
+
+.stone {
+    background-image: url("../img/gegenstaende/Blöcke/stein\ wand.png");
+    background-size: contain;
+}
+
+.torch {
+    background-image: url("../img/gegenstaende/Blöcke/fackel\ gif.gif");
+    background-size: contain;
+}
+
+.sign {
+    background-image: url("../img/gegenstaende/Blöcke/stein\ mit\ schild.png");
+    background-size: contain;
+}
+
+.stoneGround {
+    background-image: url("../img/gegenstaende/Blöcke/stone\ ground.png");
+    background-size: contain;
+}
+
+.dirt {
+    background-image: url("../img/gegenstaende/Blöcke/dirt.png");
+    background-size: contain;
+}
+
+.closedDoorUpper {
+    /*background-image: url("../img/gegenstaende/Blöcke/");*/
+    background-size: contain;
+}
+
+.closedDoorLower {
+    /*background-image: url("../img/gegenstaende/Blöcke/");*/
+    background-size: contain;
+}
+
+.openedDoorUpper {
+    /*background-image: url("../img/gegenstaende/Blöcke/");*/
+    background-size: contain;
+}
+
+.openedDoorLower {
+    /*background-image: url("../img/gegenstaende/Blöcke/");*/
+    background-size: contain;
+}
+
+.key {
+    background-image: url("../img/gegenstaende/Schlüssel/key2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.door {
+    background-color: blue;
 }

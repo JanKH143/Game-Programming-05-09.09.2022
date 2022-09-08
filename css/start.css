@@ -5,6 +5,7 @@
     background-image: url("../img/gegenstaende/Hintergründe/start-screen.png");
     background-size: contain;
     background-repeat: no-repeat;
+    margin: auto;
     display: grid;
     grid-template-columns: 23fr 49fr 10fr 18fr;
     grid-template-rows: 50fr 10fr 25fr 5fr 10fr;
