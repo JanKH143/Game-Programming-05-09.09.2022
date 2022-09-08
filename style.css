@@ -1,11 +1,9 @@
 .menubutton {
     position: absolute;
     text-align: center;
-    line-height: 80px;
     font-size: 50px;
-    width: 400px;
     border: 5px;
-    background-color: aqua;
+    
     border-radius: 20px;
 }
 
@@ -25,24 +23,71 @@
 #gameover {
     background-image: url(Bilder/gameover.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 101%;
 
+}
+
+#startscreen {
+    background-image: url(Bilder/start-screen.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
 
 #startbutton {
-    top: 400px;
-    left: 765px;
+    top: 630px;
+    left: 470px;
+    width: 910px;
+    height: 270px;
 }
 
 #creditsbutton {
-    top: 500px;
-    left: 765px;
+    top: 1000px;
+    left: 1570px;
+    width: 350px;
+    height: 85px;
+}
+
+#rickroll {
+    top:500px;
+    left: 500px;
+    height: 100px;
+    width: 760px;
 }
 
 
 
 .solid {
+    
+}
+
+.stone {
     background-image: url(Bilder/stein_wand.png);
+}
+
+.torch {
+    background-image: url(Bilder/fackel\ gif.gif);
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+
+.sign {
+    background-image: url(Bilder/stein\ mit\ schild.png);
+}
+
+.stoneGround {
+    background-image: url(Bilder/stone\ ground.png);
+}
+
+.dirt {
+    background-image: url(Bilder/dirt.png);
+}
+
+.notFound {
+    background-color: red;
 }
 
 #player {
@@ -54,9 +99,12 @@
     top: 0px;
     background-size: contain;
 
+    background-repeat: no-repeat;
+
 }
 
 #board {
+    background-image: url(Bilder/Hintergrund-djungel.png);
     border: 10px solid black;
     width: 1900px;
     height: 1000px;
@@ -81,6 +129,14 @@
 
 .playerStandingRight {
     background-image: url(Bilder/player_standing_right.png);
+}
+
+.playerWalkingLeft {
+    background-image: url(Bilder/player_walking_left.png);
+}
+
+.playerWalkingRight {
+    background-image: url(Bilder/player_walking_right.png);
 }
 
 
