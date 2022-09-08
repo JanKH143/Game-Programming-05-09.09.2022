@@ -51,10 +51,10 @@
     z-index: 1;
     width: 50px;
     height: 100px;
-    background-color: rgb(211, 49, 49);
     position: absolute;
     left: 0px;
     top: 0px;
+    background-size: contain;
 }
 
 #board {
