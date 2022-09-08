@@ -82,7 +82,7 @@ function generateBlock(solid, row, column) {
 
 */
 
-console.log(board);
+
 
 let player = {
     dir: 'R',
@@ -98,7 +98,7 @@ function setPosition() {
     fallcheck();
 }
 
-function testBlock(x, y) {
+function testBlock(y, x) {
 
     if (board[x] && board[x][y]) {
         return board[x][y].solid;
