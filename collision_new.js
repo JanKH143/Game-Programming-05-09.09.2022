@@ -1,3 +1,5 @@
+/*
+
 let board = generateArray();
 
 $(document).ready(function () {
@@ -11,7 +13,6 @@ $(document).ready(function () {
 
 function showBoard(board) {
     console.log(board);
-    /*Zeigt das Spielfeld an*/
 
     for (let e = 0; e < board.length; e++) {
 
@@ -35,13 +36,13 @@ function generateArray() {
     let board = [];
     for (let i = 0; i < 20; i++) {
 
-        /*Erste for-Schleife kreirt die "unter Arrays"*/
+        /*Erste for-Schleife kreirt die "unter Arrays"
         board[i] = [];
 
         //if(i % 2 == 0) {
         for (let j = 0; j < 38; j++) {
 
-            /*Zweite for-Schleife kreirt die Objekte in der Array und setzt solid auf true oder false*/
+            /*Zweite for-Schleife kreirt die Objekte in der Array und setzt solid auf true oder false
 
             if (i > 16) {
                 board[i][j] = generateBlock(true, i, j);
@@ -73,7 +74,7 @@ function generateArray() {
 }
 
 function generateBlock(solid, row, column) {
-    /*Befüllt die "unter Arrays" mit Objekten*/
+    /*Befüllt die "unter Arrays" mit Objekten
     return {
         solid: solid,
         row: row,
@@ -82,19 +83,19 @@ function generateBlock(solid, row, column) {
 }
 
 
-
+*/
 
 let player = {
     dir: 'R',
-    x: 0,
-    y: 0
+    x: 10,
+    y: 100
 
 };
 
 
 function setPosition() {
     $('#spielfigur').css("top", player.x * 50);
-    $('#spielfigur').css("left", player.y * 50 + 10);
+    $('#spielfigur').css("left", player.y * 50 - 40);
     $('#spielfigur').addClass(dir);
     fallcheck();
 }
@@ -104,7 +105,7 @@ function testBlock(x, y) {
 }
 
 function fallcheck() {
-    if (testBolck(player.x, player.y + 1) == false) {
+    if (testBlock(player.x, player.y + 1) == false) {
         player.y++;
         setPosition();
     }
@@ -112,16 +113,16 @@ function fallcheck() {
 $(document).ready(e => {
     $(document).on('keydown', e => {
         switch (e.code) {
-            case "ArrowUp":
+            case "KeyW":
                 if (player.dir == 'L') {
-                    if (testBolck(player.x - 1, player.y - 1) == false && testBolck(player.x - 1, player.y - 2) == false && testBolck(player.x, player.y - 2) == false) {
+                    if (testBlock(player.x - 1, player.y - 1) == false && testBlock(player.x - 1, player.y - 2) == false && testBlock(player.x, player.y - 2) == false) {
                         player.x--;
                         player.y++;
                         setPosition();
                     }
                 }
                 else {
-                    if (testBolck(player.x + 1, player.y - 1) == false && testBolck(player.x + 1, player.y - 2) == false && testBolck(player.x, player.y - 2) == false) {
+                    if (testBlock(player.x + 1, player.y - 1) == false && testBlock(player.x + 1, player.y - 2) == false && testBlock(player.x, player.y - 2) == false) {
                         player.x--;
                         player.y++;
                         setPosition();
@@ -130,16 +131,16 @@ $(document).ready(e => {
 
 
                 break;
-            case "ArrowLeft":
-                if (testBolck(player.x - 1, player.y) == false && testBolck(player.x - 1, player.y - 1) == false) {
+            case "KeyA":
+                if (testBlock(player.x - 1, player.y) == false && testBlock(player.x - 1, player.y - 1) == false) {
                     player.x--;
                     dir = 'L';
                     setPosition();
                 }
 
                 break;
-            case "ArrowRight":
-                if (testBolck(player.x - 1, player.y) == true && testBolck(player.x - 1, player.y - 1) == true) {
+            case "KeyD":
+                if (testBlock(player.x - 1, player.y) == true && testBlock(player.x - 1, player.y - 1) == true) {
                     player.x++;
                     dir = 'R'
                     setPosition();
@@ -147,7 +148,7 @@ $(document).ready(e => {
                 break;
             default:
                 break;
-                
+
         }
 
     })
