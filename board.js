@@ -1,12 +1,9 @@
 let board = generateArray();
 
 $(document).ready(function () {
-
-showBoard(board);
+	showBoard(board);
 
 });
-
-
 
 
 function showBoard (board) {
@@ -43,19 +40,19 @@ function generateArray () {
 
 				/*Zweite for-Schleife kreirt die Objekte in der Array und setzt solid auf true oder false*/
 
-				if(i > 16) {
+				if(i > 17) {
 					board [i][j] = generateBlock(true, i, j);
 
 				}
-				else if(j == 0) {
+				else if(j == 0 && i > 10) {
 					board [i][j] = generateBlock(true, i, j);
 
 				}
-				else if(j == 37) {
+				else if(j == 37 && i > 15) {
 					board [i][j] = generateBlock(true, i, j);
 
 				}
-				else if(i == 0) {
+				else if((j == 16 && i > 16 )||(j == 17 && i > 16)) {
 					board [i][j] = generateBlock(true, i, j);
 
 				}
