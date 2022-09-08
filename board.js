@@ -96,12 +96,12 @@ function generateEmptyArray () {
 
 				//Erstellt leeres board
 
-					board [i][j] = generateBlock(false, i, j);
+					board [i][j] = generateBlock('air', false, false, i, j);
 
 			}
 	}
 
-	return board;
+	return emptyboard;
 
 }
 
@@ -118,12 +118,23 @@ function generateBlock(blocktype, solid, interactive, row, column) {
 
 function arrayEditor (levelNum) {
 
-	let level1 = [{	solid: true,
+	let level1 = [{	blocktype: 'dirt',
+					solid: true,
+					interactive: false,
 					row: 15,
 					column: 15,}];
 
 
+	for(let e = 0; e < board.length; e++){
+
+		for(let d = 0; d < board[e].length; d++) {
+			let blocktype = board[e][d].blocktype;
+				
+
+				
+		}
+									
+	}
+
 	return levelNum
-
-
 }

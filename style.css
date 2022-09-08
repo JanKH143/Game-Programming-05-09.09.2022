@@ -58,25 +58,27 @@
 
 .stone {
     background-image: url(Bilder/stein_wand.png);
+    background-size: contain;
 }
 
 .torch {
     background-image: url(Bilder/fackel\ gif.gif);
-    width: 50px;
-    height: 50px;
     background-size: contain;
 }
 
 .sign {
     background-image: url(Bilder/stein\ mit\ schild.png);
+    background-size: contain;
 }
 
 .stoneGround {
     background-image: url(Bilder/stone\ ground.png);
+    background-size: contain;
 }
 
 .dirt {
     background-image: url(Bilder/dirt.png);
+    background-size: contain;
 }
 
 .notFound {
