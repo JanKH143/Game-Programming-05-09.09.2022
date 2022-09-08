@@ -8,18 +8,26 @@ let player = {
 function demo () {
     // (A) DO SOMETHING
     console.log("eine sekunde warten");
-   
+    $(".player").addClass();
     // (B) RUN THIS AFTER 1 SECOND
    
     if(player.left < 600)
     {
         player.left = player.left + 5;
-        $("#player").css("left", player.left);
-
+        $(".player").css("left", player.left);
+        
         setTimeout(demo, 100);
     }
     else{
+       // $('.player').css('background-image', 'url("../images/moreturn.png");');
+      // $("#playerr").hide();
+       //$("#player2").show();
+      // $(".player").css("background-image", 'url("images/mo.png")');
+      $("#player2").hide();
+      console.log('hide')
+      $('#playerr').show();
         demolinks();
+        
     }
     
     
@@ -35,17 +43,21 @@ function demo () {
     if(player.left > 0)
     {
         player.left = player.left - 5;
-        $("#player").css("left", player.left);
+        $(".player").css("left", player.left);
 
         setTimeout(demolinks, 100);
     }
     else{
+       // $('.player').css('background-image', 'url("../images/moreturn.png");');
+       $("#playerr").hide();
+       console.log('hide')
+       $('#player2').show();
        demo();
     }
     
      }
 
-$(document).ready(function () {
+/*$(document).ready(function () {
     console.log(player);
 
     $(document).on('keydown', e => {
@@ -56,19 +68,19 @@ $(document).ready(function () {
             case "KeyA":
                 player.left = left - 10;
                 //console.log($("#player").css("left"));
-                $("#player").css("left", left);
+                $(".player").css("left", left);
                 //console.log(player.left + "   A gedrueckt");
                 break;
             case "ArrowRight":
             case "KeyD":
                 player.left = left + 10;
                 //console.log(player.left + "    D gedrueckt");
-                $("#player").css("left", left);
+                $(".player").css("left", left);
                 break;
             case "ArrowDown":
             case "KeyS":
                 player.top = top + 10;
-                $("#player").css("top", top);
+                $(".player").css("top", top);
                 break;
         }
         //console.log(left);
@@ -76,23 +88,25 @@ $(document).ready(function () {
 
 
     });
-});
+});*/
 $(document).ready(function () {
 
+    $("#playerr").hide();
+    console.log('hide')
+    $('#player2').show();
 
-    $(document).on('keydown', e => {
-        switch (e.code) {
-            case "KeyP":
+
+ 
                 
                    
                     demo();
 
                 
-                break;
+                
         }
-    });
-}
-);
+    );
+
+;
 
 function setStartingPosition(x, y) {
 
