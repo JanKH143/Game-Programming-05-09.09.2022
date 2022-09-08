@@ -7,14 +7,7 @@ showBoard(board);
 });
 
 
-function generateBlock(solid, row, column) {
-	/*Befüllt die "unter Arrays" mit Objekten*/
-	return {
-		solid: solid,
-		row: row,
-		column: column,
-	}
-}
+
 
 function showBoard (board) {
 	console.log(board);
@@ -24,12 +17,11 @@ function showBoard (board) {
 
 		for(let d = 0; d < board[e].length; d++) {
 
-			console.log($('#board'));
 
 			if (board[e][d].solid == true) {
-				$('#board').append('<div class="solid"></div>');
+				$('#board').append('<div class="solid">'+board[e][d].row+board[e][d].column+'</div>');
 			} else {
-				$('#board').append('<div class="solid"></div>');
+				$('#board').append('<div>'+board[e][d].row+board[e][d].column+'</div>');
 			}
 
 			//console.log(e);
@@ -49,24 +41,26 @@ function generateArray () {
 		/*Erste for-Schleife kreirt die "unter Arrays"*/
 		board [i] = [];
 
-		if(i % 2 == 0) {
+		//if(i % 2 == 0) {
 			for(let j = 0; j < 38; j++) {
 
 				/*Zweite for-Schleife kreirt die "zweit Arrays"*/
 
-				if(j % 2  == 0) {
+				if(i > 18) {
 					board [i][j] = generateBlock(true, i, j);
 
 				}
 				else {
 					board [i][j] = generateBlock(false, i, j);
+
+					
 				}
 			}
-		}
-		else {
+		//}
+		/*else {
 			for(let j = 0; j < 38; j++) {
 
-				/*Dritte for-Schleife kreirt auch "zweit Arrays"*/
+				/*Dritte for-Schleife kreirt auch "zweit Arrays"*//*
 
 				if(j % 2 == 0) {
 					board [i][j] = generateBlock(false, i, j);
@@ -75,9 +69,20 @@ function generateArray () {
 					board [i][j] = generateBlock(true, i, j);
 				}
 			}
-		}
+		}*/
 	}
+
+	console.log(board);
 
 	return board;
 
+}
+
+function generateBlock(solid, row, column) {
+	/*Befüllt die "unter Arrays" mit Objekten*/
+	return {
+		solid: solid,
+		row: row,
+		column: column,
+	}
 }
