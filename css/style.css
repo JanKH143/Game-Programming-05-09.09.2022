@@ -1,0 +1,69 @@
+.solid {
+    background-image: url(Bilder/stein_wand.png);
+}
+
+#player {
+    z-index: 1;
+    width: 50px;
+    height: 100px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-size: contain;
+
+}
+
+#board {
+    background-image: url(Bilder/Hintergrund-djungel.png);
+    border: 10px solid black;
+    width: 1900px;
+    height: 1000px;
+    display: flex;
+    flex-flow: row wrap;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+}
+
+#board>div {
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+.playerStandingLeft {
+    background-image: url(Bilder/player_standing_left.png);
+}
+
+.playerStandingRight {
+    background-image: url(Bilder/player_standing_right.png);
+}
+
+
+
+
+.credits {
+    font-size: 30px;
+}
+
+#logik {
+    left: 19%;
+    position: absolute;
+}
+
+#design {
+    left: 40%;
+    width: 20%;
+    position: absolute;
+}
+
+#coding {
+    right: 20%;
+    position: absolute;
+}
+
+.center {
+    text-align: center;
+}
