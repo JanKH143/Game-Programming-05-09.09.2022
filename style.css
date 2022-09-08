@@ -68,6 +68,18 @@
 }
 
 
+
+
+.playerStandingLeft{
+    background-image: url("Bilder/player_standing_left.png");
+}
+.playerStandingRight {
+    background-image: url("Bilder/player_standing_right.png");
+}
+
+
+
+
 .credits {
     font-size: 30px;
 }
