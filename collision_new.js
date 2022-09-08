@@ -82,10 +82,11 @@ function generateBlock(solid, row, column) {
 
 */
 
+console.log(board);
 
 let player = {
     dir: 'R',
-    x: 4,
+    x: 3,
     y: 17,
 
 };
@@ -93,15 +94,18 @@ let player = {
 
 function setPosition() {
     $('#player').css("top", player.y * 50);
-    $('#player').css("left", player.x * 50 - 40);
-    $('#player').addClass(player.dir);
-    // fallcheck();
+    $('#player').css("left", player.x * 50 + 10);
+    fallcheck();
 }
 
 function testBlock(x, y) {
+    console.log(x);
+    console.log(y);
+    console.log(board[x][y]);
     if (board[x] && board[x][y]) {
         return board[x][y].solid;
     }
+    else return false;
 }
 
 function fallcheck() {
@@ -118,14 +122,14 @@ $(document).ready(e => {
                 if (player.dir == 'L') {
                     if (testBlock(player.x - 1, player.y - 1) == false && testBlock(player.x - 1, player.y - 2) == false && testBlock(player.x, player.y - 2) == false) {
                         player.x--;
-                        player.y++;
+                        player.y--;
                         setPosition();
                     }
                 }
                 else {
                     if (testBlock(player.x + 1, player.y - 1) == false && testBlock(player.x + 1, player.y - 2) == false && testBlock(player.x, player.y - 2) == false) {
-                        player.x--;
-                        player.y++;
+                        player.x++;
+                        player.y--;
                         setPosition();
                     }
                 }
@@ -133,10 +137,9 @@ $(document).ready(e => {
 
                 break;
             case "KeyA":
-                console.log(player);
                 if (testBlock(player.x - 1, player.y) == false && testBlock(player.x - 1, player.y - 1) == false) {
                     player.x--;
-                    dir = 'L';
+                    player.dir = 'L';
                     setPosition();
                 }
 
@@ -144,7 +147,7 @@ $(document).ready(e => {
             case "KeyD":
                 if (testBlock(player.x + 1, player.y) == false && testBlock(player.x + 1, player.y - 1) == false) {
                     player.x++;
-                    dir = 'R'
+                    player.dir = 'R';
                     setPosition();
                 }
                 break;
