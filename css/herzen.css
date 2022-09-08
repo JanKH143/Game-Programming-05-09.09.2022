@@ -1,0 +1,8 @@
+.herz{
+    width: 15px;
+    height: 15px;
+    background-image: url('img/herzen.jfif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    /* Fehlt noch das Sie nebeneinander sind */
+}
