@@ -99,11 +99,8 @@ function setPosition() {
 }
 
 function testBlock(y, x) {
-
-    if (board[x] && board[x][y]) {
+    console.log(board[x][y].solid)
         return board[x][y].solid;
-    }
-    else return false;
 }
 
 function fallcheck() {
