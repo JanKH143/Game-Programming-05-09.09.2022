@@ -1,13 +1,5 @@
 let board = generateArray();
 
-let level1 = [{
-	blocktype: 'dirt',
-	solid: true,
-	interactive: false,
-	row: 15,
-	column: 15,
-}];
-
 let level1=[
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 17,	column:9,},
 {blocktype: 'stone',	solid: true,	interactive:false,	row: 16,	column:10,},
@@ -117,12 +109,6 @@ function generateArray() {
 					board [i][j] = generateBlock('air', false, false, i, j);	
 				}
 			}
-			else if (j == 18) {
-				board[i][j] = generateBlock('stone', true, false, i, j);
-			}
-			else if (j == 13 && i == 17) {
-				board[i][j] = generateBlock('stone', true, false, i, j);
-			}
 
 			else {
 				board[i][j] = generateBlock('air', false, false, i, j);
@@ -171,4 +157,6 @@ function arrayEditor(levelNum) {
 	}
 
 	return levelNum
+}
+}
 }

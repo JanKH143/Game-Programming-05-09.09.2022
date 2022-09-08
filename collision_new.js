@@ -99,9 +99,7 @@ function setPosition() {
 }
 
 function testBlock(x, y) {
-    console.log(x);
-    console.log(y);
-    console.log(board[x][y]);
+
     if (board[x] && board[x][y]) {
         return board[x][y].solid;
     }
