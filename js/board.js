@@ -50,16 +50,17 @@ let bossFight = [
     { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 33, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 34, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 35, },
+    { blocktype: 'door', solid: false, interactive: true, row: 16, column: 37, },
+    { blocktype: 'door', solid: false, interactive: true, row: 17, column: 37, },
 ];
 
 $(document).ready(function () {
     loadBoard();
-    showBoard(board);
+    showBoard();
 });
 
 
-function showBoard(board) {
-    console.log(board);
+function showBoard() {
 
     for (let e = 0; e < board.length; e++) {
 
@@ -110,14 +111,12 @@ function loadBoard() {
             break;
         case 2:
             newBoard = bossFight;
-            //$('#board').addClass('boss');
             break;
         default:
-            newBoard = level1;
+            location.replace('gameover.html');
             break;
     }
 
-    console.log(newBoard);
     for (let d = 0; d < newBoard.length; d++) {
         let blocktype = newBoard[d].blocktype;
 

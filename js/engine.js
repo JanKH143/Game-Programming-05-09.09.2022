@@ -30,7 +30,7 @@ function testInteraktion(x, y) {
                 $('#board').empty();
                 board = generateStandardBoard();
                 loadBoard();
-                showBoard(board);
+                showBoard();
                 player.x = 1;
                 player.y = 16;
                 setPosition();
@@ -42,7 +42,6 @@ function testInteraktion(x, y) {
 }
 
 function fallcheck() {
-    console.log(canJump);
     while(testBlock(player.x, player.y + 2) == false) {
         player.y++;
         setPosition();
@@ -50,7 +49,6 @@ function fallcheck() {
 }
 
 function jumpUp() {
-    console.log(player);
     if(testBlock(player.x, player.y - 1)==false)
     {
         player.y -= 1;
@@ -80,12 +78,11 @@ function jump() {
 let canJump = true;
 
 $(document).ready(e => {
-    console.log(player);
     setPosition();
 
     $(document).on('keydown', e => {
-        console.log(e.code);
         switch (e.code) {
+            case "Space":
             case "ArrowUp":
             case "KeyW":
                 if (canJump)
