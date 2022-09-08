@@ -8,7 +8,7 @@ let level1 = [{	blocktype: 'dirt',
 
 
 $(document).ready(function () {
-	arrayEditor(level1);
+	//arrayEditor(level1);
 	showBoard(board);
 	
 
@@ -66,7 +66,10 @@ function generateArray () {
 				/*Zweite for-Schleife kreirt die Objekte in der Array und setzt solid auf true oder false*/
 
 				if(i > 17) {
-					board [i][j] = generateBlock('stone', false, true, i, j);
+					board [i][j] = generateBlock('stone', true, false, i, j);
+				}
+				else if(j == 18) {
+					board [i][j] = generateBlock('stone', true, false, i, j);
 				}
 				
 				else {
@@ -93,14 +96,10 @@ function arrayEditor (levelNum) {
 	for(let d = 0; d < levelNum.length; d++) {
 		let blocktype = levelNum[d].blocktype;
 				
-		if(blocktype == 'stone') {
-			board [levelNum[d].row][levelNum[d].column] = generateBlock('stone', false, true, levelNum[d].row, levelNum[d].column);
+		if(blocktype == 'stone' || blocktype == 'dirt') {
+			board [levelNum[d].row][levelNum[d].column] = generateBlock(blocktype, true, false, levelNum[d].row, levelNum[d].column);
 			console.log('stone');
 		}
-		else if(blocktype == 'dirt') {
-			board [levelNum[d].row][levelNum[d].column] = generateBlock('dirt', false, true, levelNum[d].row, levelNum[d].column);
-			console.log('dirt');
-		}	
 		else {
 			console.log('Error: ArrayEditor - not found' + levelNum[d].blocktype);	
 		}
