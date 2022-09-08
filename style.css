@@ -56,6 +56,14 @@
     left: 0px;
     top: 0px;
 }
+#board {
+    border: 10px solid black;
+    width: 1000px;
+    height: 600px;
+    display:flex;
+
+}
+
 .credits {
     font-size: 30px;
 }
