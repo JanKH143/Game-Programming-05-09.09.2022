@@ -57,6 +57,7 @@
 }
 
 #board {
+    background-image: url(Bilder/Hintergrund-djungel.png);
     border: 10px solid black;
     width: 1900px;
     height: 1000px;
