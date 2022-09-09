@@ -25,8 +25,8 @@ let level1 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 34, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 35, },
     { blocktype: 'key', solid: false, interactive: false, row: 16, column: 20, },
-    { blocktype: 'door', solid: false, interactive: true, row: 17, column: 37, },
-    { blocktype: 'door', solid: false, interactive: true, row: 16, column: 37, },
+    { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 17, column: 37, },
+    { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 16, column: 37, },
 ];
 
 let monster1 = [
@@ -42,6 +42,8 @@ let monster2 = [
 ]
 
 let bossFight = [
+    { blocktype: 'doorLastLevel', solid: false, interactive: true, row: 16, column: 0, },
+    { blocktype: 'doorLastLevel', solid: false, interactive: true, row: 17, column: 0, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 9, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 10, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 10, },
@@ -63,8 +65,8 @@ let bossFight = [
     { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 33, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 34, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 35, },
-    { blocktype: 'door', solid: false, interactive: true, row: 16, column: 37, },
-    { blocktype: 'door', solid: false, interactive: true, row: 17, column: 37, },
+    { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 16, column: 37, },
+    { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 17, column: 37, },
 ];
 
 $(document).ready(function () {
@@ -138,10 +140,14 @@ function loadBoard() {
         case 1:
             newBoard = level1;
             allMonster = monster1;
+            $("#board").removeClass("background2");
+            $("#board").addClass("background1");
             break;
         case 2:
             newBoard = bossFight;
             allMonster = monster2;
+            $("#board").removeClass("background1");
+            $("#board").addClass("background2");
             break;
         default:
             location.replace('gameover.html');
