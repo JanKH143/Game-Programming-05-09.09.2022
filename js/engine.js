@@ -1,8 +1,9 @@
 var player = {
     dir: 'R',
-    x: 3,
+    x: 2,
     y: 16,
     level: 1,
+    key: false,
     hp: 3
 };
 
@@ -14,7 +15,7 @@ function setPosition() {
 
 function testBlock(x, y) {
     if (!board[y] && !board[y][x]) return true;
-
+    testInteraktion(x, y);
     if (!board[y][x].solid) {
         testInteraktion(x, y);
     }
@@ -25,7 +26,22 @@ function testInteraktion(x, y) {
     if (board[y][x].interactive) {
         switch (board[y][x].blocktype) {
             case "key":
+                player.key = true;
+                board[y][x].blocktype = "air";
+                board[y][x].interactive = false;
+                replaceBlock("key");
+                //playerInteraction();
                 break;
+            case "closedDoorLower":
+                if (player.key == true) {
+                    player.key = false;
+                    board[y][x].blocktype = "openedDoorLower";
+                    board[y - 1][x].blocktype = "openedDoorUpper";
+                    replaceBlock("closedDoor");
+                    //playerInteraction();
+                }
+                break;
+            case "openedDoorLower":
             case "doorNextLevel":
                 player.level++;
                 $('#board').empty();
@@ -37,9 +53,15 @@ function testInteraktion(x, y) {
                 board = generateStandardBoard();
                 loadBoard();
                 showBoard();
-                player.x = 1;
+                player.x = 2;
                 player.y = 16;
                 setPosition();
+                break;
+            case "woodenChest":
+                    board[y][x].blocktype = "woodenChestOpen";
+                    board[y][x].blocktype = "woodenChestOpen";
+                    replaceBlock("woodenChest");
+                    //playerInteraction();
                 break;
             case "doorLastLevel":
                     player.level--;
