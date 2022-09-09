@@ -23,6 +23,7 @@ let level1 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 33, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 34, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 35, },
+    { blocktype: 'woodenChest', solid: false, interactive: true, row: 13, column: 15, },
     { blocktype: 'key', solid: false, interactive: true, row: 16, column: 20, },
     { blocktype: 'closedDoorLower', solid: true, interactive: true, row: 17, column: 37, },
     { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
@@ -137,6 +138,10 @@ function replaceBlock(blockClass) {
             $('.closedDoorLower').removeClass('closedDoorLower');
             $('.closedDoorUpper').addClass('openedDoorUpper');
             $('.closedDoorUpper').removeClass('closedDoorUpper');
+            break;
+        case "woodenChest":
+            $('.woodenChest').addClass('woodenChestOpen');
+            $('.woodenChest').removeClass('woodenChest');
             break;
         default:
             break;

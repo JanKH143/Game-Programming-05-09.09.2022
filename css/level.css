@@ -187,18 +187,15 @@
     background-image: url("../img/gegenstaende/Kisten/open-gold-kiste.png");
 }
 
-.holzChest {
+.woodenChest {
     background-image: url("../img/gegenstaende/Kisten/holz-kiste.png");
 }
 
-.holzChestOpen {
+.woodenChestOpen {
     background-image: url("../img/gegenstaende/Kisten/open-holz-kiste.png");
 
 }
 
-.door {
-    background-color: blue;
-}
 
 .geist {
     background-image: url("../img/monster/ghost.png");

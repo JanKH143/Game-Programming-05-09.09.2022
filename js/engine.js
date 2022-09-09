@@ -45,6 +45,12 @@ function testInteraktion(x, y) {
                 player.y = 16;
                 setPosition();
                 break;
+
+            case "woodenChest":
+                    board[y][x].blocktype = "woodenChestOpen";
+                    board[y][x].blocktype = "woodenChestOpen";
+                    replaceBlock("woodenChest");
+                break;
             default:
                 break;
         }
