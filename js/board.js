@@ -61,7 +61,7 @@ let level1 = [
 
 let bossFight = [
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 9, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 10, },
+    { blocktype: 'torch', solid: true, interactive: false, row: 16, column: 10, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 10, },
     { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 11, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 11, },
@@ -73,14 +73,11 @@ let bossFight = [
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 21, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 21, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 22, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 28, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 29, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 30, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 31, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 32, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 33, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 34, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 35, },
+
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 18, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 19, },
+
+    { blocktype: 'key', solid: false, interactive: true, row: 11, column: 21, },
     { blocktype: 'closedDoorLower', solid: true, interactive: true, row: 17, column: 37, },
     { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
 ];
