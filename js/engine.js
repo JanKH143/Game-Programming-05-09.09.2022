@@ -13,19 +13,29 @@ function setPosition() {
 
 function testBlock(x, y) {
     if (!board[y] && !board[y][x]) return true;
-
-    if(!board[y][x].solid) {
-        testInteraktion(x, y);
-    }
+    testInteraktion(x, y);
     return board[y][x].solid;
 }
 
+let hasKey = false
 function testInteraktion(x, y) {
-    if(board[y][x].interactive) {
-        switch(board[y][x].blocktype) {
+    if (board[y][x].interactive) {
+        switch (board[y][x].blocktype) {
             case "key":
+                hasKey = true;
+                board[y][x].blocktype = "air";
+                board[y][x].interactive = false;
                 break;
-            case "door":
+            case "closedDoorLower":
+                if (hasKey == true) {
+                    hasKey = false;
+                    board[y][x].blocktype = "openedDoorLower";
+                    board[y][x].solid = false;
+                    board[y + 1][x].blocktype = "openedDoorUpper";
+                    board[y + 1][x].solid = false;
+                }
+                break;
+            case "openedDoorLower":
                 player.level++;
                 $('#board').empty();
                 board = generateStandardBoard();
@@ -42,23 +52,21 @@ function testInteraktion(x, y) {
 }
 
 function fallcheck() {
-    while(testBlock(player.x, player.y + 2) == false) {
+    while (testBlock(player.x, player.y + 2) == false) {
         player.y++;
         setPosition();
     }
 }
 
 function jumpUp() {
-    if(testBlock(player.x, player.y - 1)==false)
-    {
+    if (testBlock(player.x, player.y - 1) == false) {
         player.y -= 1;
         setPosition();
     }
 }
 
 function jumpDown() {
-    if(testBlock(player.x, player.y + 2)==false)
-    {
+    if (testBlock(player.x, player.y + 2) == false) {
         player.y += 1;
         setPosition();
     }
@@ -66,13 +74,13 @@ function jumpDown() {
 
 function jump() {
     canJump = false;
-    for(let i = 0; i < 3; i++) {
-        setTimeout(jumpUp, i*100);
+    for (let i = 0; i < 3; i++) {
+        setTimeout(jumpUp, i * 100);
     }
-    for(let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
         setTimeout(jumpDown, 300 + i * 100);
     }
-    setTimeout(function () {canJump = true; fallcheck()}, 600);
+    setTimeout(function () { canJump = true; fallcheck() }, 600);
 }
 
 let canJump = true;
@@ -87,7 +95,7 @@ $(document).ready(e => {
             case "KeyW":
                 if (canJump)
                     jump();
-            
+
                 break;
             case "ArrowLeft":
             case "KeyA":
@@ -95,7 +103,7 @@ $(document).ready(e => {
                     player.x--;
                     setPosition();
                 }
-                if(canJump)
+                if (canJump)
                     fallcheck();
                 player.dir = 'L';
                 break;
@@ -106,7 +114,7 @@ $(document).ready(e => {
                     player.x++;
                     setPosition();
                 }
-                if(canJump)
+                if (canJump)
                     fallcheck();
                 player.dir = 'R';
                 break;
