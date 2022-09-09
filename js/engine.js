@@ -1,6 +1,6 @@
 var player = {
     dir: 'R',
-    x: 3,
+    x: 2,
     y: 16,
     level: 1
 };
@@ -41,7 +41,7 @@ function testInteraktion(x, y) {
                 board = generateStandardBoard();
                 loadBoard();
                 showBoard();
-                player.x = 1;
+                player.x = 2;
                 player.y = 16;
                 setPosition();
                 break;
