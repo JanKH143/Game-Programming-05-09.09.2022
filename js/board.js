@@ -24,9 +24,10 @@ let level1 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 33, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 34, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 35, },
-    { blocktype: 'key', solid: false, interactive: false, row: 16, column: 20, },
-    { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 17, column: 37, },
-    { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 16, column: 37, },
+    { blocktype: 'woodenChest', solid: false, interactive: true, row: 13, column: 15, },
+    { blocktype: 'key', solid: false, interactive: true, row: 16, column: 20, },
+    { blocktype: 'closedDoorLower', solid: true, interactive: true, row: 17, column: 37, },
+    { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
 ];
 
 let monster1 = [
@@ -101,7 +102,6 @@ function showBoard() {
 
         for (let d = 0; d < board[e].length; d++) {
             let blocktype = board[e][d].blocktype;
-
             $('#board').append('<div class="' + blocktype + '">' + board[e][d].row + board[e][d].column + '</div>');
         }
     }
@@ -178,6 +178,27 @@ function loadBoard() {
         let blocktype = newBoard[d].blocktype;
 
         board[newBoard[d].row][newBoard[d].column] = generateBlock(blocktype, newBoard[d].solid, newBoard[d].interactive, newBoard[d].row, newBoard[d].column);
+    }
+}
+
+function replaceBlock(blockClass) {
+    switch (blockClass) {
+        case "key":
+            $('.key').addClass('air');
+            $('.key').removeClass('key');
+            break;
+        case "closedDoor":
+            $('.closedDoorLower').addClass('openedDoorLower');
+            $('.closedDoorLower').removeClass('closedDoorLower');
+            $('.closedDoorUpper').addClass('openedDoorUpper');
+            $('.closedDoorUpper').removeClass('closedDoorUpper');
+            break;
+        case "woodenChest":
+            $('.woodenChest').addClass('woodenChestOpen');
+            $('.woodenChest').removeClass('woodenChest');
+            break;
+        default:
+            break;
     }
     for (let i = 0; i < allMonster.length; i++) {
         monsterlvl[i] = generateMonster(allMonster[i].dir, allMonster[i].monstertype, allMonster[i].row, allMonster[i].column);
