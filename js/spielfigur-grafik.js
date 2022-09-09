@@ -15,7 +15,6 @@ $(document).ready(function () {
                 $("#player").removeClass("playerStandingLeft");
                 $("#player").addClass("playerWalkingRight");
                 break;
-    
             default:
                 break;
         }
@@ -44,3 +43,45 @@ $(document).ready(function () {
 
     })
 })
+
+function playerJumpAnimation() {
+    switch (player.dir) {
+        case "L":
+            $("#player").removeClass("playerWalkingRight");
+            $("#player").removeClass("playerWalkingLeft");
+            $("#player").removeClass("playerStandingRight");
+            $("#player").removeClass("playerStandingLeft");
+            $("#player").addClass("playerJumpingLeft");
+            break;
+        case "R":
+            $("#player").removeClass("playerWalkingRight");
+            $("#player").removeClass("playerWalkingLeft");
+            $("#player").removeClass("playerStandingRight");
+            $("#player").removeClass("playerStandingLeft");
+            $("#player").addClass("playerJumpingRight");
+            break;
+    }
+}
+
+function playerLandingAnimation() {
+    switch (player.dir) {
+        case "L":
+            $("#player").removeClass("playerJumpingLeft");
+            $("#player").removeClass("playerJumpingRight");
+            $("#player").removeClass("playerWalkingRight");
+            $("#player").removeClass("playerWalkingLeft");
+            $("#player").removeClass("playerStandingRight");
+            $("#player").addClass("playerStandingLeft");
+            break;
+
+        case "R":
+            $("#player").removeClass("playerJumpingLeft");
+            $("#player").removeClass("playerJumpingRight");
+            $("#player").removeClass("playerWalkingRight");
+            $("#player").removeClass("playerWalkingLeft");
+            $("#player").addClass("playerStandingRight");
+            $("#player").removeClass("playerStandingLeft");
+            break;
+    }
+
+}
