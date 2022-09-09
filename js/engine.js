@@ -25,7 +25,7 @@ function testInteraktion(x, y) {
                 hasKey = true;
                 board[y][x].blocktype = "air";
                 board[y][x].interactive = false;
-                showBoard();
+                replaceBlock("key");
                 break;
             case "closedDoorLower":
                 console.log("test");
@@ -35,7 +35,8 @@ function testInteraktion(x, y) {
                     board[y][x].solid = false;
                     board[y - 1][x].blocktype = "openedDoorUpper";
                     board[y - 1][x].solid = false;
-                    showBoard();
+                    replaceBlock("closedDoor");
+                    break;
                 }
                 break;
             case "openedDoorLower":

@@ -105,7 +105,7 @@ function generateBlock(blocktype, solid, interactive, column, row) {
 
 function loadBoard() {
     let newBoard;
-    switch(player.level) {
+    switch (player.level) {
         case 1:
             newBoard = level1;
             break;
@@ -124,18 +124,22 @@ function loadBoard() {
     }
 }
 
-function  replaceBoard(board) {
-
-    for (let e = 0; e < board.length; e++) {
-
-        for (let d = 0; d < board[e].length; d++) {
-            let blocktype = board[e][d].blocktype;
-
-            $('#' + blocktype).delete('<div class="' + blocktype + '">' + board[e][d].row + board[e][d].column + '</div>');
-        }
-
-
+function replaceBlock(blockClass) {
+    //$('"' + blockClass + '"').addClass('"' + newClass + '"');
+    //$('"' + blockClass + '"').removeClass('"' + blockClass + '"');
+    switch (blockClass) {
+        case "key":
+            $('.key').addClass('air');
+            $('.key').removeClass('key');
+            break;
+        case "closedDoor":
+            $('.closedDoorLower').addClass('openedDoorLower');
+            $('.closedDoorLower').removeClass('closedDoorLower');
+            $('.closedDoorUpper').addClass('openedDoorUpper');
+            $('.closedDoorUpper').removeClass('closedDoorUpper');
+            break;
+        default:
+            break;
     }
-
 
 }
