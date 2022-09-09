@@ -2,7 +2,8 @@ var player = {
     dir: 'R',
     x: 3,
     y: 16,
-    level: 1
+    level: 1,
+    hp: 3
 };
 
 
@@ -82,6 +83,7 @@ let canJump = true;
 
 $(document).ready(e => {
     setPosition();
+    herzenErstllen(3);
 
     $(document).on('keydown', e => {
         switch (e.code) {
@@ -116,6 +118,8 @@ $(document).ready(e => {
             default:
                 break;
         }
+        for(let i = 0; i < monsterlvl.length; i++)
+            checkMonsterCollision(i)
     });
 });
 
@@ -141,4 +145,47 @@ function moveMonster(monsterNum) {
         monster.row--;
     }
     setMonsterPosition(monsterNum);
+    checkMonsterCollision(monsterNum);
+}
+
+function checkMonsterCollision(monsterNum) {
+    monster = monsterlvl[monsterNum];
+
+    if(monster.column == player.x) {
+        if(monster.row == player.y || monster.row == player.y + 1) {
+            player.hp--;
+            herzEntfernen(1);
+            $("#player").addClass("blink");
+            setTimeout(function() {$("#player").removeClass("blink")}, 450);
+        }
+    }
+
+    if(player.hp == 0) {
+        location.replace('gameover.html');
+    }
+}
+
+var aktuelleHerzen;
+var counterHerzen;
+
+function herzenErstllen(anzahlHerzen){
+    anzahl = anzahlHerzen;
+    for (counterHerzen = 0; counterHerzen < anzahl; counterHerzen++) {
+        displayHerz(true);
+    }
+    aktuelleHerzen = anzahlHerzen;
+    return aktuelleHerzen;
+}
+
+function herzEntfernen(anzahl){
+    aktuelleHerzen = aktuelleHerzen - anzahl;
+    displayHerz(false);
+}
+
+function displayHerz(hinzu){
+    if(hinzu == true){
+        $('#herzbox').append('<div class="herz" id="herz' + counterHerzen + '"></div>');
+    }else if (hinzu == false){
+        $(('#herz' + aktuelleHerzen)).remove();
+    }
 }

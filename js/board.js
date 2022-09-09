@@ -31,11 +31,14 @@ let level1 = [
 
 let monster1 = [
     { dir: 'unten', monstertype: 'geist', row: 0, column: 4 },
-    { dir: 'oben', monstertype: 'geist', row: 19, column: 4 },
+    { dir: 'oben', monstertype: 'geist', row: 19, column: 19 },
+    { dir: 'oben', monstertype: 'geist', row: 10, column: 10 },
 ]
 
 let monster2 = [
     { dir: 'unten', monstertype: 'geist', row: 0, column: 15 },
+    { dir: 'unten', monstertype: 'geist', row: 10, column: 9 },
+    { dir: 'unten', monstertype: 'geist', row: 10, column: 8 },
 ]
 
 let bossFight = [
