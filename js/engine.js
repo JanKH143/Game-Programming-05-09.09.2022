@@ -25,7 +25,7 @@ function testInteraktion(x, y) {
         switch(board[y][x].blocktype) {
             case "key":
                 break;
-            case "door":
+            case "doorNextLevel":
                 player.level++;
                 $('#board').empty();
                 board = generateStandardBoard();
@@ -35,6 +35,16 @@ function testInteraktion(x, y) {
                 player.y = 16;
                 setPosition();
                 break;
+            case "doorLastLevel":
+                    player.level--;
+                    $('#board').empty();
+                    board = generateStandardBoard();
+                    loadBoard();
+                    showBoard();
+                    player.x = 36;
+                    player.y = 16;
+                    setPosition();
+                    break;
             default:
                 break;
         }

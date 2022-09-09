@@ -99,10 +99,12 @@
     background-image: url("../img/gegenstaende/Schlüssel/key2.png");
 }
 
-.door {
+.doorNextLevel {
     background-color: blue;
 }
-
+.doorLastLevel {
+    background-color: red;
+}
 .geist {
     background-image: url("../img/monster/ghost.png");
 }
