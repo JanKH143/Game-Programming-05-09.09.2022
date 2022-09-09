@@ -113,3 +113,13 @@
 .geist {
     background-image: url("../img/monster/ghost.png");
 }
+#homebutton{
+    background-image: url("../img/buttons/Kleines_Haus.png");
+    position: absolute;
+    background-size: cover;
+    height:75px;
+    width: 75px;
+    left: 0px;
+    z-index: 1;
+    top: 10px;
+}
