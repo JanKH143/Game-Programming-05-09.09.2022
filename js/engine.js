@@ -16,9 +16,6 @@ function setPosition() {
 function testBlock(x, y) {
     if (!board[y] && !board[y][x]) return true;
     testInteraktion(x, y);
-    if (!board[y][x].solid) {
-        testInteraktion(x, y);
-    }
     return board[y][x].solid;
 }
 
@@ -30,7 +27,7 @@ function testInteraktion(x, y) {
                 board[y][x].blocktype = "air";
                 board[y][x].interactive = false;
                 replaceBlock("key");
-                //playerInteraction();
+                playerInteraction();
                 break;
             case "closedDoorLower":
                 if (player.key == true) {
@@ -38,11 +35,13 @@ function testInteraktion(x, y) {
                     board[y][x].blocktype = "openedDoorLower";
                     board[y - 1][x].blocktype = "openedDoorUpper";
                     replaceBlock("closedDoor");
-                    //playerInteraction();
+                    playerInteraction();
                 }
+                console.log(player.level);
                 break;
             case "openedDoorLower":
             case "doorNextLevel":
+                console.log(player.level);
                 player.level++;
                 $('#board').empty();
                 for(let i = 0; i < monsterBewegung.length; i++) {
@@ -50,10 +49,11 @@ function testInteraktion(x, y) {
                 }
                 monsterlvl =[];
                 monsterBewegung = [];
+                console.log(player.level);
                 board = generateStandardBoard();
                 loadBoard();
                 showBoard();
-                player.x = 2;
+                player.x = 1;
                 player.y = 16;
                 setPosition();
                 break;
@@ -61,10 +61,12 @@ function testInteraktion(x, y) {
                     board[y][x].blocktype = "woodenChestOpen";
                     board[y][x].blocktype = "woodenChestOpen";
                     replaceBlock("woodenChest");
-                    //playerInteraction();
-                break;
-            case "doorLastLevel":
+                    playerInteraction();
+                    break;
+            case "doorLastLevelLower":
+            case "doorLastLevelUpper":
                     player.level--;
+                    console.log(player.level);
                     $('#board').empty();
                     board = generateStandardBoard();
                     loadBoard();

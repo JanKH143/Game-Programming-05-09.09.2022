@@ -30,21 +30,9 @@ let level1 = [
     { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
 ];
 
-let monster1 = [
-    { dir: 'unten', monstertype: 'geist', row: 0, column: 4 },
-    { dir: 'oben', monstertype: 'geist', row: 19, column: 19 },
-    { dir: 'oben', monstertype: 'geist', row: 10, column: 10 },
-]
-
-let monster2 = [
-    { dir: 'unten', monstertype: 'geist', row: 0, column: 15 },
-    { dir: 'unten', monstertype: 'geist', row: 10, column: 9 },
-    { dir: 'unten', monstertype: 'geist', row: 10, column: 8 },
-]
-
 let level2 = [
-    { blocktype: 'doorLastLevel', solid: false, interactive: true, row: 16, column: 0, },
-    { blocktype: 'doorLastLevel', solid: false, interactive: true, row: 17, column: 0, },
+    { blocktype: 'doorLastLevelUpper', solid: false, interactive: true, row: 16, column: 0, },
+    { blocktype: 'doorLastLevelLower', solid: false, interactive: true, row: 17, column: 0, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 3, },
     { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 5, },
     { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 6, },
@@ -81,13 +69,100 @@ let level2 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 35, },
     { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 36, },
     { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 34, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 35, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 35, },
     { blocktype: 'door', solid: false, interactive: true, row: 9, column: 37, },
     { blocktype: 'door', solid: false, interactive: true, row: 8, column: 37, },
     { blocktype: 'schatz', solid: false, interactive: true, row: 9, column: 35, },
-    { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 16, column: 37, },
-    { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 17, column: 37, },
+    { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
+    { blocktype: 'closedDoorLower', solid: true, interactive: true, row: 17, column: 37, },
 ];
+
+let level3 = [
+    { blocktype: 'doorLastLevelUpper', solid: false, interactive: true, row: 16, column: 0, },
+    { blocktype: 'doorLastLevelLower', solid: false, interactive: true, row: 17, column: 0, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 2, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 4, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 6, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 7, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 8, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 10, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 12, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 13, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 14, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 14, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 14, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 15, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column:15 , },
+    { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 15, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 16, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 17, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 4, column: 8, },
+    { blocktype: 'key', solid: false, interactive: true, row: 3, column: 8, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 4, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 5, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 6, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 6, column: 10, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 12, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 13, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 6, column: 14, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 5, column: 15, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 4, column: 16, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 17, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 18, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 9, column: 19, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 20, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 21, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 5, column: 22, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 24, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 23, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 6, column: 22, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 24, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 25, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 26, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 27, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 27, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 6, column: 27, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 28, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 29, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 30, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 31, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 32, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 33, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 34, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 35, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 9, column: 36, },
+    { blocktype: 'door', solid: false, interactive: true, row: 8, column: 37, },
+    { blocktype: 'door', solid: false, interactive: true, row: 7, column: 37, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 19, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 20, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 18, },
+    { blocktype: 'closedDoorLower', solid: true, interactive: true, row: 17, column: 37, },
+    { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
+  // hier muss ne chest hin  { blocktype: '', solid: false, interactive: false, row: 6, column: 23, },
+]
+
+let monster1 = [
+    { dir: 'unten', monstertype: 'geist', row: 0, column: 4 },
+    { dir: 'oben', monstertype: 'geist', row: 19, column: 19 },
+    { dir: 'oben', monstertype: 'geist', row: 10, column: 10 },
+]
+
+let monster2 = [
+    { dir: 'unten', monstertype: 'geist', row: 0, column: 15 },
+    { dir: 'unten', monstertype: 'geist', row: 10, column: 9 },
+    { dir: 'unten', monstertype: 'geist', row: 10, column: 8 },
+]
+
+let monster3 = [
+    { dir: 'unten', monstertype: 'geist', row: 0, column: 15 },
+    { dir: 'unten', monstertype: 'geist', row: 10, column: 9 },
+    { dir: 'unten', monstertype: 'geist', row: 10, column: 8 },
+]
+
+
 
 $(document).ready(function () {
     loadBoard();
@@ -155,6 +230,7 @@ function generateMonster(dir, monstertype, row, column) {
 function loadBoard() {
     let newBoard;
     let allMonster;
+    console.log(player.level);
     switch (player.level) {
         case 1:
             newBoard = level1;
@@ -168,6 +244,12 @@ function loadBoard() {
             $("#board").removeClass("background1");
             $("#board").addClass("background2");
             break;
+        case 3:
+            newBoard = level3;
+            allMonster = monster3;
+            $("#board").removeClass("background1");
+            $("#board").addClass("background2");
+            break;
         default:
             location.replace('victoryscreen.html');
             allMonster = monster1;
@@ -178,6 +260,10 @@ function loadBoard() {
         let blocktype = newBoard[d].blocktype;
 
         board[newBoard[d].row][newBoard[d].column] = generateBlock(blocktype, newBoard[d].solid, newBoard[d].interactive, newBoard[d].row, newBoard[d].column);
+    }
+
+    for (let i = 0; i < allMonster.length; i++) {
+        monsterlvl[i] = generateMonster(allMonster[i].dir, allMonster[i].monstertype, allMonster[i].row, allMonster[i].column);
     }
 }
 
@@ -199,8 +285,5 @@ function replaceBlock(blockClass) {
             break;
         default:
             break;
-    }
-    for (let i = 0; i < allMonster.length; i++) {
-        monsterlvl[i] = generateMonster(allMonster[i].dir, allMonster[i].monstertype, allMonster[i].row, allMonster[i].column);
     }
 }
