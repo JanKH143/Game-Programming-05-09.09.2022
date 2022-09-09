@@ -10,7 +10,6 @@
     display: flex;
     flex-flow: row wrap;
     background-size: contain;
-    background-repeat: repeat;
 }
 
 #board>div {
@@ -156,4 +155,7 @@
     width: 40px;
     height: 40px;
     float:left;
+
+.geist {
+    background-image: url("../img/monster/ghost.png");
 }
