@@ -28,7 +28,6 @@ function testInteraktion(x, y) {
                 replaceBlock("key");
                 break;
             case "closedDoorLower":
-                console.log("test");
                 if (hasKey == true) {
                     hasKey = false;
                     board[y][x].blocktype = "openedDoorLower";
