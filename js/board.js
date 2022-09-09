@@ -23,7 +23,7 @@ let level1 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 33, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 34, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 35, },
-    { blocktype: 'key', solid: false, interactive: false, row: 16, column: 20, },
+    { blocktype: 'key', solid: false, interactive: true, row: 16, column: 20, },
     { blocktype: 'closedDoorLower', solid: true, interactive: true, row: 17, column: 37, },
     { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
 ];
