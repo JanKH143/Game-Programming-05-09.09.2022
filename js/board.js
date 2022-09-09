@@ -94,6 +94,7 @@ let testlevel = [
     { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 13, },
     { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 14, },
     { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 15, },
+]
 
 let monster1 = [
     { dir: 'unten', monstertype: 'geist', row: 0, column: 4 },
