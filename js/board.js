@@ -90,7 +90,50 @@ let level4 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 15, },
     { blocktype: 'stone', solid: true, interactive: false, row: 11, column:15 , },
     { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 15, },
-
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 16, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 17, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 4, column: 8, },
+    { blocktype: 'key', solid: false, interactive: true, row: 3, column: 8, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 4, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 5, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 6, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 6, column: 10, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 12, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 13, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 6, column: 14, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 5, column: 15, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 4, column: 16, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 17, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 18, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 9, column: 19, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 20, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 21, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 5, column: 22, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 23, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 23, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 6, column: 22, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 24, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 25, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 26, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 27, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 27, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 6, column: 27, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 28, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 29, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 30, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 31, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 32, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 33, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 7, column: 34, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 8, column: 35, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 9, column: 36, },
+    { blocktype: 'door', solid: false, interactive: true, row: 8, column: 37, },
+    { blocktype: 'door', solid: false, interactive: true, row: 7, column: 37, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 19, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 20, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 18, },
+  // hier muss ne chest hin  { blocktype: '', solid: false, interactive: false, row: 6, column: 23, },
 ]
 
 let bossFight = [
@@ -177,6 +220,12 @@ function loadBoard() {
         case 2:
             newBoard = level2;
             break;
+
+
+        case 4:
+            newBoard = level4;
+            break;
+
         default:
             location.replace('gameover.html');
             break;
