@@ -9,8 +9,7 @@
     background-image: url("../img/gegenstaende/Hintergründe/Hintergrund-djungel.png");
     display: flex;
     flex-flow: row wrap;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #board>div {
@@ -22,7 +21,7 @@
 
 
 #player {
-    z-index: 1;
+    z-index: 2;
     width: 50px;
     height: 100px;
     position: absolute;
@@ -113,6 +112,60 @@
 .door {
     background-color: blue;
 }
+
+.monster {
+    background-image: url("../img/monster/ghost.png");
+    z-index: 1;
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 50px;
+}
+
+.blink {
+    animation: blinking 0.5s 0s;
+}
+
+@keyframes blinking {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+#herzbox {
+    width: 125px;
+    height: 45px;
+    position: absolute;
+    left: 1750px;
+    top: 20px;
+    z-index: 1;
+    float:left;
+}
+
+.herz {
+    background-image: url('../img/charakter/Herz.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    float:left;
 
 .geist {
     background-image: url("../img/monster/ghost.png");
