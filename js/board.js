@@ -187,9 +187,7 @@ function showBoard() {
         for (let d = 0; d < board[e].length; d++) {
             let blocktype = board[e][d].blocktype;
 
-            $('#board').append('<div class="' + blocktype + '">' + board[e][d].row +',' + board[e][d].column + '</div>');
-
-            $('#board').append('<div class="' + blocktype + '">' + board[e][d].row + board[e][d].column + '</div>');
+            $('#board').append('<div class="' + blocktype + '">'/* + board[e][d].row +',' + board[e][d].column + '</div>'*/);
         }
     }
 
@@ -241,7 +239,7 @@ function generateMonster(dir, monstertype, row, column) {
 
 function loadBoard() {
     let newBoard;
-    let allMonster;
+    var allMonster;
     switch (player.level) {
         case 1:
             newBoard = level1;
@@ -287,7 +285,7 @@ function replaceBlock(blockClass) {
         default:
             break;
     }
-    for (let i = 0; i < allMonster.length; i++) {
-        monsterlvl[i] = generateMonster(allMonster[i].dir, allMonster[i].monstertype, allMonster[i].row, allMonster[i].column);
-    }
+    //for (let i = 0; i < allMonster.length; i++) {
+    //    monsterlvl[i] = generateMonster(allMonster[i].dir, allMonster[i].monstertype, allMonster[i].row, allMonster[i].column);
+    //}
 }

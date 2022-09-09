@@ -59,8 +59,9 @@ function testInteraktion(x, y) {
                 break;
             case "woodenChest":
                     board[y][x].blocktype = "woodenChestOpen";
-                    board[y][x].blocktype = "woodenChestOpen";
                     replaceBlock("woodenChest");
+                    herzenErstllen(1);
+                    displayHerz(true);
                     //playerInteraction();
                 break;
             case "doorLastLevel":
