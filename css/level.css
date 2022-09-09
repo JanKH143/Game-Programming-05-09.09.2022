@@ -147,6 +147,30 @@
     background-image: url("../img/gegenstaende/Schlüssel/key2.png");
 }
 
+.diaChest {
+    background-image: url("../img/gegenstaende/Kisten/dia-kiste.png");
+}
+
+.diaChestOpen {
+    background-image: url("../img/gegenstaende/Kisten/open-dia-kiste.png");
+}
+
+.goldChest {
+    background-image: url("../img/gegenstaende/Kisten/gold-kiste.png");
+}
+
+.goldChestOpen {
+    background-image: url("../img/gegenstaende/Kisten/open-gold-kiste.png");
+}
+
+.holzChest {
+    background-image: url("../img/gegenstaende/Kisten/holz-kiste.png");
+}
+
+.holzChestOpen {
+    background-image: url("../img/gegenstaende/Kisten/open-holz-kiste.png");
+}
+
 .door {
     background-color: blue;
 }
