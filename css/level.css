@@ -48,11 +48,11 @@
 }
 
 .playerInteractionLeft {
-    background-image: url('../img/charakter/player_interaction.png');
+    background-image: url('../img/charakter/player_interacting_left.png');
 }
 
 .playerInteractionRight{
-    background-image: url('../img/charakter/player_interaction.png');
+    background-image: url('../img/charakter/player_interacting_right.png');
 }
 
 .playerJumpingRight {
