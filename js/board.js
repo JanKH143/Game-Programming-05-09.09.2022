@@ -131,7 +131,7 @@ function  replaceBoard(board) {
         for (let d = 0; d < board[e].length; d++) {
             let blocktype = board[e][d].blocktype;
 
-            $('#'blocktype).delete('<div class="' + blocktype + '">' + board[e][d].row + board[e][d].column + '</div>');
+            $('#' + blocktype).delete('<div class="' + blocktype + '">' + board[e][d].row + board[e][d].column + '</div>');
         }
 
 
