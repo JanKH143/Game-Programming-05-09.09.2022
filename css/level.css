@@ -75,6 +75,54 @@
     background-size: contain;
 }
 
+.amethyst {
+    background-image: url("../img/gegenstaende/Blöcke/amethyst.png");
+}
+
+.mossStone {
+    background-image: url("../img/gegenstaende/Blöcke/bewachsene\ steinwand.png");
+}
+
+.diamond {
+    background-image: url("../img/gegenstaende/Blöcke/diamanten.png");
+}
+
+.fox {
+    background-image: url("../img/gegenstaende/Blöcke/dirt\ 2.png");
+}
+
+.grassStone {
+    background-image: url("../img/gegenstaende/Blöcke/grass\ mit\ stein.png");
+}
+
+.holeInWall {
+    background-image: url("../img/gegenstaende/Blöcke/loch\ in\ der\ wand.png");
+}
+
+.StoneWater {
+    background-image: url("../img/gegenstaende/Blöcke/stein\ mit\ wasser.png");
+}
+
+.picture {
+    background-image: url("../img/gegenstaende/Blöcke/stone\ mit\ bild.png");
+}
+
+.stone2 {
+    background-image: url("../img/gegenstaende/Blöcke/stone\ mit\ ritzen.png");
+}
+
+.root1 {
+    background-image: url("../img/gegenstaende/Blöcke/wurzeln\ links.png");
+}
+
+.root2 {
+    background-image: url("../img/gegenstaende/Blöcke/wurzeln\ links\ unten.png");
+}
+
+.root3 {
+    background-image: url("../img/gegenstaende/Blöcke/wurzeln\ mitte.png");
+}
+
 .closedDoorUpper {
     background-image: url("../img/gegenstaende/Tür/door-up-closed.png");
     background-size: contain;
@@ -107,6 +155,3 @@
     background-image: url("../img/monster/ghost.png");
 }
 
-.amethyst {
-    background-image: url("../img/gegenstaende/Blöcke/amethyst.png");
-}
