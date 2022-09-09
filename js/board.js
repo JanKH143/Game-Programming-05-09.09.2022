@@ -41,30 +41,49 @@ let monster2 = [
     { dir: 'unten', monstertype: 'geist', row: 10, column: 8 },
 ]
 
-let bossFight = [
+let level2 = [
     { blocktype: 'doorLastLevel', solid: false, interactive: true, row: 16, column: 0, },
     { blocktype: 'doorLastLevel', solid: false, interactive: true, row: 17, column: 0, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 9, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 10, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 10, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 11, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 11, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 11, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 13, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 14, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 15, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 3, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 5, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 6, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 5, },
+    { blocktype: 'key', solid: false, interactive: true, row: 10, column: 5, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 7, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 12, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 13, }, 
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 13, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 18, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 19, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 19, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 19, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 20, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 20, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 21, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 21, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 22, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 28, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 29, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 30, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 31, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 32, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 33, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 34, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 35, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 24, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 25, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 25, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 26, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 26, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 27, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 27, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 29, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 29, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 30, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 31, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 32, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 33, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 33, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 34, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 35, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 36, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 34, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 35, },
+    { blocktype: 'door', solid: false, interactive: true, row: 9, column: 37, },
+    { blocktype: 'door', solid: false, interactive: true, row: 8, column: 37, },
+    { blocktype: 'schatz', solid: false, interactive: true, row: 9, column: 35, },
     { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 16, column: 37, },
     { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 17, column: 37, },
 ];
@@ -144,13 +163,13 @@ function loadBoard() {
             $("#board").addClass("background1");
             break;
         case 2:
-            newBoard = bossFight;
+            newBoard = level2;
             allMonster = monster2;
             $("#board").removeClass("background1");
             $("#board").addClass("background2");
             break;
         default:
-            location.replace('gameover.html');
+            location.replace('victoryscreen.html');
             allMonster = monster1;
             break;
     }

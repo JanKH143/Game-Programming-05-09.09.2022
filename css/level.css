@@ -121,6 +121,9 @@
     background-color: red;
 }
 
+.schatz {
+    background-image: url("../img/gegenstaende/Kisten/goldKiste.png");
+}
 
 .monster {
     background-image: url("../img/monster/ghost.png");
