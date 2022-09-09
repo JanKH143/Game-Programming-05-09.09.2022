@@ -1,3 +1,5 @@
+
+
 var board = generateStandardBoard();
 
 let level1 = [
@@ -27,6 +29,69 @@ let level1 = [
     { blocktype: 'door', solid: false, interactive: true, row: 17, column: 37, },
     { blocktype: 'door', solid: false, interactive: true, row: 16, column: 37, },
 ];
+let level2 = [
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 3, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 5, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 6, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 5, },
+    //ich weiß nicht ob key interactive false richtig ist.
+    { blocktype: 'key', solid: false, interactive: true, row: 10, column: 5, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 7, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 12, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 13, }, 
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 13, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 18, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 19, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 19, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 19, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 20, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 20, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 21, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 24, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 25, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 25, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 26, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 26, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 27, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 27, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 29, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 29, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 30, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 31, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 32, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 33, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 33, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 34, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 35, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 36, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 34, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 35, },
+    { blocktype: 'door', solid: false, interactive: true, row: 9, column: 37, },
+    { blocktype: 'door', solid: false, interactive: true, row: 8, column: 37, },
+
+];
+
+let level4 = [
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 2, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 4, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 6, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 7, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 8, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 10, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 12, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 13, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 14, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 14, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 14, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 15, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column:15 , },
+    { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 15, },
+
+]
 
 let bossFight = [
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 9, },
@@ -110,7 +175,7 @@ function loadBoard() {
             newBoard = level1;
             break;
         case 2:
-            newBoard = bossFight;
+            newBoard = level2;
             break;
         default:
             location.replace('gameover.html');
