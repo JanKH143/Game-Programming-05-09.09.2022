@@ -166,10 +166,12 @@
     width: 40px;
     height: 40px;
     float:left;
+}
 
 .geist {
     background-image: url("../img/monster/ghost.png");
 }
+
 #homebutton{
     background-image: url("../img/buttons/Kleines_Haus.png");
     position: absolute;
