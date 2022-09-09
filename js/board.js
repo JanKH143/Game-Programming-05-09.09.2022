@@ -110,9 +110,13 @@ function loadBoard() {
     switch(player.level) {
         case 1:
             newBoard = level1;
+            $("#board").removeClass("background2");
+            $("#board").addClass("background1");
             break;
         case 2:
             newBoard = bossFight;
+            $("#board").removeClass("background1");
+            $("#board").addClass("background2");
             break;
         default:
             location.replace('gameover.html');
