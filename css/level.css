@@ -76,22 +76,22 @@
 }
 
 .closedDoorUpper {
-    /*background-image: url("../img/gegenstaende/Blöcke/");*/
+    background-image: url("../img/gegenstaende/Tür/door-up-closed.png");
     background-size: contain;
 }
 
 .closedDoorLower {
-    /*background-image: url("../img/gegenstaende/Blöcke/");*/
+    background-image: url("../img/gegenstaende/Tür/door-bottom.png");
     background-size: contain;
 }
 
 .openedDoorUpper {
-    /*background-image: url("../img/gegenstaende/Blöcke/");*/
+    background-image: url("../img/gegenstaende/Tür/door-up-open.png");
     background-size: contain;
 }
 
 .openedDoorLower {
-    /*background-image: url("../img/gegenstaende/Blöcke/");*/
+    background-image: url("../img/gegenstaende/Tür/door-bottom.png");
     background-size: contain;
 }
 
@@ -105,4 +105,8 @@
 
 .geist {
     background-image: url("../img/monster/ghost.png");
+}
+
+.amethyst {
+    background-image: url("../img/gegenstaende/Blöcke/amethyst.png");
 }
