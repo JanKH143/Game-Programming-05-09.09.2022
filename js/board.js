@@ -67,7 +67,7 @@ function showBoard() {
         for (let d = 0; d < board[e].length; d++) {
             let blocktype = board[e][d].blocktype;
 
-            $('#board').append('<div class="' + blocktype + '">' + board[e][d].row + board[e][d].column + '</div>');
+            $('#board').append('<div class="' + blocktype + '">' + board[e][d].row +',' + board[e][d].column + '</div>');
         }
 
 
