@@ -113,7 +113,7 @@ function loadBoard() {
             newBoard = bossFight;
             break;
         default:
-            location.replace('gameover.html');
+            location.replace('won.html');
             break;
     }
 
