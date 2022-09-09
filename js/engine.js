@@ -2,7 +2,8 @@ var player = {
     dir: 'R',
     x: 2,
     y: 16,
-    level: 1
+    level: 1,
+    key: false,
 };
 
 
@@ -17,19 +18,18 @@ function testBlock(x, y) {
     return board[y][x].solid;
 }
 
-let hasKey = false
 function testInteraktion(x, y) {
     if (board[y][x].interactive) {
         switch (board[y][x].blocktype) {
             case "key":
-                hasKey = true;
+                player.key = true;
                 board[y][x].blocktype = "air";
                 board[y][x].interactive = false;
                 replaceBlock("key");
                 break;
             case "closedDoorLower":
-                if (hasKey == true) {
-                    hasKey = false;
+                if (player.key == true) {
+                    player.key = false;
                     board[y][x].blocktype = "openedDoorLower";
                     board[y - 1][x].blocktype = "openedDoorUpper";
                     replaceBlock("closedDoor");
