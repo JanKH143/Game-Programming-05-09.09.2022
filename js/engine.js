@@ -52,6 +52,7 @@ function fallcheck() {
         player.y++;
         setPosition();
     }
+    playerLandingAnimation();
 }
 
 function jumpUp() {
@@ -92,7 +93,7 @@ $(document).ready(e => {
             case "KeyW":
                 if (canJump)
                     jump();
-
+                    playerJumpAnimation();
                 break;
             case "ArrowLeft":
             case "KeyA":
