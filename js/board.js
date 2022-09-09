@@ -2,6 +2,36 @@ var board = generateStandardBoard();
 var monsterlvl = [];
 
 let level1 = [
+    { blocktype: 'holeInWall', solid: true, interactive: false, row: 18, column: 10, },
+    
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 29, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 30, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 31, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 32, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 33, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 34, },
+
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 30, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 31, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 32, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 33, },
+
+    { blocktype: 'dirt', solid: true, interactive: false, row: 18, column: 29, },
+    { blocktype: 'dirt', solid: true, interactive: false, row: 18, column: 30, },
+    { blocktype: 'dirt', solid: true, interactive: false, row: 18, column: 31, },
+    { blocktype: 'dirt', solid: true, interactive: false, row: 18, column: 32, },
+    { blocktype: 'dirt', solid: true, interactive: false, row: 18, column: 33, },
+    { blocktype: 'dirt', solid: true, interactive: false, row: 18, column: 34, },
+
+    { blocktype: 'dirt', solid: true, interactive: false, row: 17, column: 30, },
+    { blocktype: 'fox', solid: true, interactive: false, row: 17, column: 31, },
+    { blocktype: 'dirt', solid: true, interactive: false, row: 17, column: 32, },
+    { blocktype: 'dirt', solid: true, interactive: false, row: 17, column: 33, },
+
+    { blocktype: 'dirt', solid: true, interactive: false, row: 19, column: 31, },
+    { blocktype: 'dirt', solid: true, interactive: false, row: 19, column: 32, },
+
+
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 0, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 9, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 10, },
@@ -29,6 +59,41 @@ let level1 = [
     { blocktype: 'closedDoorLower', solid: true, interactive: true, row: 17, column: 37, },
     { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
 ];
+
+let bossFight = [
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 9, },
+    { blocktype: 'torch', solid: true, interactive: false, row: 16, column: 10, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 10, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 13, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 14, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 15, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 20, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 21, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 21, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 22, },
+
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 18, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 19, },
+
+    { blocktype: 'key', solid: false, interactive: true, row: 11, column: 21, },
+    { blocktype: 'closedDoorLower', solid: true, interactive: true, row: 17, column: 37, },
+    { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
+];
+
+let testlevel = [
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 0, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 9, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 10, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 10, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 11, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 13, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 14, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 15, },
 
 let monster1 = [
     { dir: 'unten', monstertype: 'geist', row: 0, column: 4 },
@@ -60,9 +125,26 @@ let level2 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 19, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 19, },
     { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 19, },
+
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 20, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 20, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 21, },
+
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 21, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 22, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 28, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 29, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 30, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 31, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 32, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 33, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 34, },
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 35, },
+    { blocktype: 'woodenChest', solid: false, interactive: true, row: 13, column: 15, },
+    { blocktype: 'key', solid: false, interactive: true, row: 16, column: 20, },
+    { blocktype: 'closedDoorLower', solid: true, interactive: true, row: 17, column: 37, },
+    { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
+
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 24, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 25, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 25, },
@@ -87,6 +169,7 @@ let level2 = [
     { blocktype: 'schatz', solid: false, interactive: true, row: 9, column: 35, },
     { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 16, column: 37, },
     { blocktype: 'doorNextLevel', solid: false, interactive: true, row: 17, column: 37, },
+
 ];
 
 $(document).ready(function () {
