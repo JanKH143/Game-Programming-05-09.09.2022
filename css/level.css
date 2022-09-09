@@ -102,3 +102,7 @@
 .door {
     background-color: blue;
 }
+
+.geist {
+    background-image: url("../img/monster/ghost.png");
+}
