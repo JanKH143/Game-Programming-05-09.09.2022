@@ -147,6 +147,30 @@
     background-image: url("../img/gegenstaende/Schlüssel/key2.png");
 }
 
+.keyBrown {
+    background-image: url("../img/gegenstaende/Schlüssel/key1.png");
+}
+
+.key3 {
+    background-image: url("../img/gegenstaende/Schlüssel/key3.png");
+}
+
+.keyBoss {
+    background-image: url("../img/gegenstaende/Schlüssel/boss_key.png");
+}
+
+.sword1 {
+    background-image: url("../img/gegenstaende/Schwerter/Schwert\ 1.png");
+}
+
+.sword2 {
+    background-image: url("../img/gegenstaende/Schwerter/Schwer\ 2.png");
+}
+
+.sword3 {
+    background-image: url("../img/gegenstaende/Schwerter/Schwert\ 3.png");
+}
+
 .diaChest {
     background-image: url("../img/gegenstaende/Kisten/dia-kiste.png");
 }
@@ -169,6 +193,7 @@
 
 .holzChestOpen {
     background-image: url("../img/gegenstaende/Kisten/open-holz-kiste.png");
+
 }
 
 .door {

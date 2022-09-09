@@ -67,7 +67,7 @@ function showBoard() {
         for (let d = 0; d < board[e].length; d++) {
             let blocktype = board[e][d].blocktype;
 
-            $('#board').append('<div class="'+blocktype+'">' + board[e][d].row + board[e][d].column + '</div>');
+            $('#board').append('<div class="' + blocktype + '">' + board[e][d].row + board[e][d].column + '</div>');
         }
 
 
@@ -122,4 +122,20 @@ function loadBoard() {
 
         board[newBoard[d].row][newBoard[d].column] = generateBlock(blocktype, newBoard[d].solid, newBoard[d].interactive, newBoard[d].row, newBoard[d].column);
     }
+}
+
+function  replaceBoard(board) {
+
+    for (let e = 0; e < board.length; e++) {
+
+        for (let d = 0; d < board[e].length; d++) {
+            let blocktype = board[e][d].blocktype;
+
+            $('#'blocktype).delete('<div class="' + blocktype + '">' + board[e][d].row + board[e][d].column + '</div>');
+        }
+
+
+    }
+
+
 }
