@@ -48,6 +48,13 @@
     background-image: url('../img/charakter/player_walking_right.png');
 }
 
+.playerInteracting {
+    background-image: url('../img/charakter/player_interaction.png');
+}
+
+.playerJumping {
+    background-image: url('../img/charakter/player_jumping.png');
+}
 
 /*Aussehen der Spielblöcke*/
 .stone {
