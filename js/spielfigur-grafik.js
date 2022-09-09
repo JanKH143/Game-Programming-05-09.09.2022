@@ -23,6 +23,7 @@ $(document).ready(function () {
 
     $(document).on("keyup", e => {
         switch (e.code) {
+            case "ArrowLeft":
             case "KeyA":
                 $("#player").removeClass("playerWalkingRight");
                 $("#player").removeClass("playerWalkingLeft");
@@ -30,6 +31,7 @@ $(document).ready(function () {
                 $("#player").addClass("playerStandingLeft");
                 break;
 
+            case "ArrowRight":
             case "KeyD":
                 $("#player").removeClass("playerWalkingRight");
                 $("#player").removeClass("playerWalkingLeft");

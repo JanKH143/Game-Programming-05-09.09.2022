@@ -9,8 +9,7 @@
     background-image: url("../img/gegenstaende/Hintergründe/Hintergrund-djungel.png");
     display: flex;
     flex-flow: row wrap;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 #board>div {
