@@ -1,8 +1,10 @@
 var player = {
     dir: 'R',
-    x: 3,
+    x: 2,
     y: 16,
-    level: 1
+    level: 1,
+    key: false,
+    hp: 3
 };
 
 
@@ -14,37 +16,63 @@ function setPosition() {
 function testBlock(x, y) {
     if (!board[y] && !board[y][x]) return true;
     testInteraktion(x, y);
+    if (!board[y][x].solid) {
+        testInteraktion(x, y);
+    }
     return board[y][x].solid;
 }
 
-let hasKey = false
 function testInteraktion(x, y) {
     if (board[y][x].interactive) {
         switch (board[y][x].blocktype) {
             case "key":
-                hasKey = true;
+                player.key = true;
                 board[y][x].blocktype = "air";
                 board[y][x].interactive = false;
                 replaceBlock("key");
+                //playerInteraction();
                 break;
             case "closedDoorLower":
-                if (hasKey == true) {
-                    hasKey = false;
+                if (player.key == true) {
+                    player.key = false;
                     board[y][x].blocktype = "openedDoorLower";
                     board[y - 1][x].blocktype = "openedDoorUpper";
                     replaceBlock("closedDoor");
+                    //playerInteraction();
                 }
                 break;
             case "openedDoorLower":
+            case "doorNextLevel":
                 player.level++;
                 $('#board').empty();
+                for(let i = 0; i < monsterBewegung.length; i++) {
+                    clearInterval(monsterBewegung[i]);
+                }
+                monsterlvl =[];
+                monsterBewegung = [];
                 board = generateStandardBoard();
                 loadBoard();
                 showBoard();
-                player.x = 1;
+                player.x = 2;
                 player.y = 16;
                 setPosition();
                 break;
+            case "woodenChest":
+                    board[y][x].blocktype = "woodenChestOpen";
+                    board[y][x].blocktype = "woodenChestOpen";
+                    replaceBlock("woodenChest");
+                    //playerInteraction();
+                break;
+            case "doorLastLevel":
+                    player.level--;
+                    $('#board').empty();
+                    board = generateStandardBoard();
+                    loadBoard();
+                    showBoard();
+                    player.x = 36;
+                    player.y = 16;
+                    setPosition();
+                    break;
             default:
                 break;
         }
@@ -56,6 +84,7 @@ function fallcheck() {
         player.y++;
         setPosition();
     }
+    playerLandingAnimation();
 }
 
 function jumpUp() {
@@ -87,6 +116,7 @@ let canJump = true;
 
 $(document).ready(e => {
     setPosition();
+    herzenErstllen(3);
 
     $(document).on('keydown', e => {
         switch (e.code) {
@@ -95,7 +125,7 @@ $(document).ready(e => {
             case "KeyW":
                 if (canJump)
                     jump();
-
+                    playerJumpAnimation();
                 break;
             case "ArrowLeft":
             case "KeyA":
@@ -121,5 +151,74 @@ $(document).ready(e => {
             default:
                 break;
         }
+        for(let i = 0; i < monsterlvl.length; i++)
+            checkMonsterCollision(i)
     });
 });
+
+function setMonsterPosition(monsterNum) {
+    monster = monsterlvl[monsterNum];
+    $('#monster' + monsterNum).css("top", monster.row * 50 + 10);
+    $('#monster' + monsterNum).css("left", monster.column * 50 + 10);
+}
+
+function moveMonster(monsterNum) {
+    monster = monsterlvl[monsterNum];
+
+    if (monster.row == 0) {
+        monster.dir = "unten";
+    } else if (monster.row == 19) {
+        monster.dir = "oben";
+    }
+
+    if (monster.dir == "unten") {
+        monster.row++;
+    }
+    if (monster.dir == "oben") {
+        monster.row--;
+    }
+    setMonsterPosition(monsterNum);
+    checkMonsterCollision(monsterNum);
+}
+
+function checkMonsterCollision(monsterNum) {
+    monster = monsterlvl[monsterNum];
+
+    if(monster.column == player.x) {
+        if(monster.row == player.y || monster.row == player.y + 1) {
+            player.hp--;
+            herzEntfernen(1);
+            $("#player").addClass("blink");
+            setTimeout(function() {$("#player").removeClass("blink")}, 450);
+        }
+    }
+
+    if(player.hp == 0) {
+        location.replace('gameover.html');
+    }
+}
+
+var aktuelleHerzen;
+var counterHerzen;
+
+function herzenErstllen(anzahlHerzen){
+    anzahl = anzahlHerzen;
+    for (counterHerzen = 0; counterHerzen < anzahl; counterHerzen++) {
+        displayHerz(true);
+    }
+    aktuelleHerzen = anzahlHerzen;
+    return aktuelleHerzen;
+}
+
+function herzEntfernen(anzahl){
+    aktuelleHerzen = aktuelleHerzen - anzahl;
+    displayHerz(false);
+}
+
+function displayHerz(hinzu){
+    if(hinzu == true){
+        $('#herzbox').append('<div class="herz" id="herz' + counterHerzen + '"></div>');
+    }else if (hinzu == false){
+        $(('#herz' + aktuelleHerzen)).remove();
+    }
+}
