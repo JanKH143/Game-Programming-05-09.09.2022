@@ -26,6 +26,7 @@ function testInteraktion(x, y) {
                 board[y][x].blocktype = "air";
                 board[y][x].interactive = false;
                 replaceBlock("key");
+                //playerInteraction();
                 break;
             case "closedDoorLower":
                 if (player.key == true) {
@@ -33,6 +34,7 @@ function testInteraktion(x, y) {
                     board[y][x].blocktype = "openedDoorLower";
                     board[y - 1][x].blocktype = "openedDoorUpper";
                     replaceBlock("closedDoor");
+                    //playerInteraction();
                 }
                 break;
             case "openedDoorLower":
@@ -50,6 +52,7 @@ function testInteraktion(x, y) {
                     board[y][x].blocktype = "woodenChestOpen";
                     board[y][x].blocktype = "woodenChestOpen";
                     replaceBlock("woodenChest");
+                    //playerInteraction();
                 break;
             default:
                 break;
