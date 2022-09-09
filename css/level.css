@@ -52,8 +52,12 @@
     background-image: url('../img/charakter/player_interaction.png');
 }
 
-.playerJumping {
-    background-image: url('../img/charakter/player_jumping.png');
+.playerJumpingRight {
+    background-image: url('../img/charakter/player_jumping_right.png');
+}
+
+.playerJumpingLeft {
+    background-image: url("../img/charakter/player_jumping_left.png");
 }
 
 /*Aussehen der Spielblöcke*/

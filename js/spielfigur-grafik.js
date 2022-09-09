@@ -45,30 +45,43 @@ $(document).ready(function () {
 })
 
 function playerJumpAnimation() {
-    $("#player").removeClass("playerWalkingRight");
-    $("#player").removeClass("playerWalkingLeft");
-    $("#player").removeClass("playerStandingRight");
-    $("#player").removeClass("playerStandingLeft");
-    $("#player").addClass("playerJumping");
-
+    switch (player.dir) {
+        case "L":
+            $("#player").removeClass("playerWalkingRight");
+            $("#player").removeClass("playerWalkingLeft");
+            $("#player").removeClass("playerStandingRight");
+            $("#player").removeClass("playerStandingLeft");
+            $("#player").addClass("playerJumpingLeft");
+            break;
+        case "R":
+            $("#player").removeClass("playerWalkingRight");
+            $("#player").removeClass("playerWalkingLeft");
+            $("#player").removeClass("playerStandingRight");
+            $("#player").removeClass("playerStandingLeft");
+            $("#player").addClass("playerJumpingRight");
+            break;
+    }
 }
 
 function playerLandingAnimation() {
     switch (player.dir) {
         case "L":
-            $("#player").removeClass("playerJumping");
+            $("#player").removeClass("playerJumpingLeft");
+            $("#player").removeClass("playerJumpingRight");
             $("#player").removeClass("playerWalkingRight");
             $("#player").removeClass("playerWalkingLeft");
             $("#player").removeClass("playerStandingRight");
             $("#player").addClass("playerStandingLeft");
             break;
-        
+
         case "R":
-            $("#player").removeClass("playerJumping");
+            $("#player").removeClass("playerJumpingLeft");
+            $("#player").removeClass("playerJumpingRight");
             $("#player").removeClass("playerWalkingRight");
             $("#player").removeClass("playerWalkingLeft");
             $("#player").addClass("playerStandingRight");
             $("#player").removeClass("playerStandingLeft");
+            break;
     }
 
 }
