@@ -47,7 +47,11 @@
     background-image: url('../img/charakter/player_walking_right.png');
 }
 
-.playerInteracting {
+.playerInteractionLeft {
+    background-image: url('../img/charakter/player_interaction.png');
+}
+
+.playerInteractionRight{
     background-image: url('../img/charakter/player_interaction.png');
 }
 
@@ -166,6 +170,7 @@
     width: 40px;
     height: 40px;
     float:left;
+}
 
 .geist {
     background-image: url("../img/monster/ghost.png");

@@ -73,6 +73,8 @@ function playerLandingAnimation() {
             $("#player").removeClass("playerWalkingRight");
             $("#player").removeClass("playerWalkingLeft");
             $("#player").removeClass("playerStandingRight");
+            $("#player").removeClass("playerInteractionLeft");
+            $("#player").removeClass("playerInteractionRight");
             $("#player").addClass("playerStandingLeft");
             break;
 
@@ -81,9 +83,37 @@ function playerLandingAnimation() {
             $("#player").removeClass("playerJumpingRight");
             $("#player").removeClass("playerWalkingRight");
             $("#player").removeClass("playerWalkingLeft");
+            $("#player").removeClass("playerInteractionLeft");
+            $("#player").removeClass("playerInteractionRight");
             $("#player").addClass("playerStandingRight");
             $("#player").removeClass("playerStandingLeft");
             break;
     }
+
+}
+
+function playerInteraction() {
+    switch (player.dir) {
+        case "L":
+            $("#player").removeClass("playerJumpingLeft");
+            $("#player").removeClass("playerJumpingRight");
+            $("#player").removeClass("playerWalkingRight");
+            $("#player").removeClass("playerWalkingLeft");
+            $("#player").removeClass("playerStandingRight");
+            $("#player").removeClass("playerStandingLeft");
+            $("#player").addClass("playerInteractionLeft");
+            break;
+
+        case "R":
+            $("#player").removeClass("playerJumpingLeft");
+            $("#player").removeClass("playerJumpingRight");
+            $("#player").removeClass("playerWalkingRight");
+            $("#player").removeClass("playerWalkingLeft");
+            $("#player").removeClass("playerStandingRight");
+            $("#player").removeClass("playerStandingLeft");
+            $("#player").addClass("playerInteractionRight");
+            break;
+    }
+    setTimeout(playerLandingAnimation, 1000);
 
 }
