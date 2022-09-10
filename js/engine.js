@@ -1,7 +1,7 @@
 var player = {
     dir: 'R',
     x: 2,
-    y: 16,
+    y: 0,
     level: 1,
     key: false,
     hp: 3
@@ -122,7 +122,7 @@ let canJump = true;
 $(document).ready(e => {
     setPosition();
     herzenErstllen(3);
-
+    fallcheck();
     $(document).on('keydown', e => {
         switch (e.code) {
             case "Space":
