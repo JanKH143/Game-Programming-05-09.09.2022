@@ -352,12 +352,14 @@ function loadRandomBoard() {
             if (d < board[e].length - 2) {
                 if (rndInt(e) < e - 7 + boardPart(d)) {
                     board[e][d] = { blocktype: 'stone', solid: true, interactive: false, row: e, column: d, };
-                    for (let f = e + 1; f < board.length - 2; f++) {
-                        if (board[f][d].solid != true) {
-                            board[f][d] = { blocktype: 'stone', solid: true, interactive: false, row: f, column: d, };
-                        }
-                        else {
-                            break;
+                    if (e > 10) {
+                        for (let f = e + 1; f < board.length - 2; f++) {
+                            if (board[f][d].solid != true) {
+                                board[f][d] = { blocktype: 'stone', solid: true, interactive: false, row: f, column: d, };
+                            }
+                            else {
+                                break;
+                            }
                         }
                     }
                 }
@@ -367,14 +369,14 @@ function loadRandomBoard() {
             }
         }
     }
-    for (let e = board.length - 4; e > 0; e--) {
+    for (let e = board.length - 3; e > 0; e--) {
         for (let d = board[e].length - 1; d > 1; d--) {
             if (board[e][d].solid == true) {
                 if (board[e][d - 1].solid != true && board[e + 1][d - 1].solid != true && board[e + 2][d - 1].solid != true && board[e + 3][d - 1].solid != true) {
-                    board[e + 3][d - 1] = { blocktype: 'stone', solid: true, interactive: false, row: e + 3, column: d - 1, };
+                    board[e + 3][d - 1] = { blocktype: 'stone', solid: true, interactive: false, row: e + 3, column: d - 1};
                     for (let f = e + 4; f < board.length - 2; f++) {
                         if (board[f][d - 1].solid != true) {
-                            board[f][d - 1] = { blocktype: 'stone', solid: true, interactive: false, row: f, column: d - 1, };
+                            board[f][d - 1] = { blocktype: 'stone', solid: true, interactive: false, row: f, column: d - 1};
                         }
                         else {
                             break;
