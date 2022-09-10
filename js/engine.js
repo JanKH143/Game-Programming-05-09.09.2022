@@ -51,10 +51,11 @@ function testInteraktion(x, y) {
                 monsterBewegung = [];
                 console.log(player.level);
                 board = generateStandardBoard();
-                loadBoard();
+                //loadBoard();
+                loadRandomBoard();
                 showBoard();
                 player.x = 1;
-                player.y = 16;
+                player.y = 0;
                 setPosition();
                 break;
             case "woodenChest":

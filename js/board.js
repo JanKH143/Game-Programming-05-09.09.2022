@@ -42,7 +42,7 @@ let level2 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 13, column: 9, },
     { blocktype: 'stone', solid: true, interactive: false, row: 14, column: 11, },
     { blocktype: 'stone', solid: true, interactive: false, row: 15, column: 12, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 13, }, 
+    { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 13, },
     { blocktype: 'stone', solid: true, interactive: false, row: 16, column: 13, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 18, },
     { blocktype: 'stone', solid: true, interactive: false, row: 17, column: 19, },
@@ -94,7 +94,7 @@ let level3 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 14, },
     { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 14, },
     { blocktype: 'stone', solid: true, interactive: false, row: 12, column: 15, },
-    { blocktype: 'stone', solid: true, interactive: false, row: 11, column:15 , },
+    { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 15, },
     { blocktype: 'stone', solid: true, interactive: false, row: 10, column: 15, },
     { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 16, },
     { blocktype: 'stone', solid: true, interactive: false, row: 11, column: 17, },
@@ -141,14 +141,14 @@ let level3 = [
     { blocktype: 'stone', solid: true, interactive: false, row: 3, column: 18, },
     { blocktype: 'closedDoorLower', solid: true, interactive: true, row: 17, column: 37, },
     { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: 16, column: 37, },
-  // hier muss ne chest hin  { blocktype: '', solid: false, interactive: false, row: 6, column: 23, },
+    // hier muss ne chest hin  { blocktype: '', solid: false, interactive: false, row: 6, column: 23, },
 ]
 
 function getRandomInt(min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min) + min);
-  }
+}
 
 let monster1 = [
     { dir: 'unten', monstertype: 'geist', row: getRandomInt(1, 16), column: getRandomInt(5, 33) },
@@ -175,7 +175,7 @@ let monster2 = [
     { dir: 'oben', monstertype: 'geist', row: getRandomInt(1, 16), column: getRandomInt(5, 33) },
     { dir: 'oben', monstertype: 'geist', row: getRandomInt(1, 16), column: getRandomInt(5, 33) },
     { dir: 'oben', monstertype: 'geist', row: getRandomInt(1, 16), column: getRandomInt(5, 33) },
-    
+
 ]
 
 let monster3 = [
@@ -205,8 +205,10 @@ let monster3 = [
 
 
 $(document).ready(function () {
-    loadBoard();
+    //loadBoard();
+    loadRandomBoard();
     showBoard();
+    console.log(board);
 });
 
 var monsterBewegung = []
@@ -217,16 +219,16 @@ function showBoard() {
 
         for (let d = 0; d < board[e].length; d++) {
             let blocktype = board[e][d].blocktype;
-            $('#board').append('<div class="' + blocktype + '"> </div>');
+            $('#board').append('<div class="' + blocktype + '"> ' + d + " " + e + '</div>');
         }
     }
 
-    for (let i = 0; i < monsterlvl.length; i++) {
-        let monstertype = monsterlvl[i];
-        $('#board').append('<div class="monster" id="monster' + i + '" class="' + monstertype + '"> </div>');
-        setMonsterPosition(i);
-        monsterBewegung.push(setInterval(function() {moveMonster(i)}, 500));
-    }
+    //  for (let i = 0; i < monsterlvl.length; i++) {
+    //      let monstertype = monsterlvl[i];
+    //      $('#board').append('<div class="monster" id="monster' + i + '" class="' + monstertype + '"> </div>');
+    //      setMonsterPosition(i);
+    //      monsterBewegung.push(setInterval(function () { moveMonster(i) }, 500));
+    //  }
 }
 
 function generateStandardBoard() {
@@ -326,4 +328,42 @@ function replaceBlock(blockClass) {
         default:
             break;
     }
+}
+
+function rndInt(n) {
+    return Math.floor(Math.random() * n);
+}
+
+function loadRandomBoard() {
+    for (let e = 0; e < board.length - 2; e++) {
+        for (let d = 0; d < board[e].length; d++) {
+            if (d < board[e].length - 2) {
+                if (rndInt(e) < e - 7) {
+                    board[e][d] = { blocktype: 'stone', solid: true, interactive: false, row: e, column: d, };
+                }
+            }
+            else {
+                board[e][d] = { blocktype: 'air', solid: false, interactive: false, row: e, column: d, };
+            }
+        }
+    }
+    for (let e = board.length - 4; e > 0; e--) {
+        for (let d = board[e].length - 1; d > 1; d--) {
+            if (board[e][d].solid == true) {
+                if (board[e][d - 1].solid != true && board[e + 1][d - 1].solid != true && board[e + 2][d - 1].solid != true && board[e + 3][d - 1].solid != true) {
+                    board[e + 3][d - 1] = { blocktype: 'stone', solid: true, interactive: false, row: e + 3, column: d - 1, };
+                    for (let f = e + 4; f < board.length - 2; f++) {
+                        if (board[f][d - 1].solid != true) {
+                            board[f][d - 1] = { blocktype: 'stone', solid: true, interactive: false, row: f, column: d - 1, };
+                        }
+                        else {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    board[17][37] = { blocktype: 'openedDoorLower', solid: true, interactive: true, row: 17, column: 39 };
+    board[16][37] = { blocktype: 'openedDoorUpper', solid: true, interactive: true, row: 16, column: 39 };
 }
