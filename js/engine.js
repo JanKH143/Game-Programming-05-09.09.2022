@@ -37,11 +37,9 @@ function testInteraktion(x, y) {
                     replaceBlock("closedDoor");
                     playerInteraction();
                 }
-                console.log(player.level);
                 break;
             case "openedDoorLower":
             case "doorNextLevel":
-                console.log(player.level);
                 player.level++;
                 $('#board').empty();
                 for(let i = 0; i < monsterBewegung.length; i++) {
@@ -49,7 +47,6 @@ function testInteraktion(x, y) {
                 }
                 monsterlvl =[];
                 monsterBewegung = [];
-                console.log(player.level);
                 board = generateStandardBoard();
                 //loadBoard();
                 loadRandomBoard();
@@ -70,7 +67,6 @@ function testInteraktion(x, y) {
             case "doorLastLevelLower":
             case "doorLastLevelUpper":
                     player.level--;
-                    console.log(player.level);
                     $('#board').empty();
                     board = generateStandardBoard();
                     loadBoard();
