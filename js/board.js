@@ -349,16 +349,41 @@ function boardPart(n) {
     }
 }
 
+function rndBackground() {
+    switch (rndInt(3)) {
+        case 0:
+            $("#board").addClass("background1");
+            $("#board").removeClass("background2");
+            $("#board").removeClass("background3");
+            break;
+        case 1:
+            $("#board").removeClass("background1");
+            $("#board").addClass("background2");
+            $("#board").removeClass("background3");
+            break;
+        case 2:
+            $("#board").removeClass("background1");
+            $("#board").removeClass("background2");
+            $("#board").addClass("background3");
+            break;
+        default:
+            $("#board").addClass("background1");
+            $("#board").removeClass("background2");
+            $("#board").removeClass("background3");
+            break;
+    }
+}
 
 function loadRandomBoard() {
+    rndBackground();
     let doorPlaced = false
     for (let e = 0; e < board.length - 2; e++) {
         for (let d = 0; d < board[e].length; d++) {
             if (d < board[e].length - 2) {
-                if (rndInt(e) < e - 7 + boardPart(d)) {
+                if (rndInt(e) < e - 8 + boardPart(d)) {
                     if (e < 17) {
                         board[e][d] = { blocktype: 'dirt', solid: true, interactive: false, row: e, column: d, };
-                        if (e > 10) {
+                        if (e > 11) {
                             for (let f = e + 1; f < board.length - 2; f++) {
                                 if (board[f][d].solid != true) {
                                     board[f][d] = { blocktype: 'dirt', solid: true, interactive: false, row: f, column: d, };
@@ -379,22 +404,49 @@ function loadRandomBoard() {
             }
         }
     }
-    for (let e = 0; e < board.length - 1; e++) {
+    for (let e = 0; e < board.length - 2; e++) {
         for (let d = board[e].length - 1; d > 0; d--) {
             if (board[e][d].solid == true) {
                 if (board[e][d - 1].solid != true && board[e + 1][d - 1].solid != true && board[e + 2][d - 1].solid != true) {
-                    board[e + 2][d - 1] = { blocktype: 'dirt', solid: true, interactive: false, row: e + 2, column: d - 1, };
-                    for (let f = e + 3; f < board.length - 2; f++) {
-                        if (board[f][d - 1].solid != true) {
-                            board[f][d - 1] = { blocktype: 'dirt', solid: true, interactive: false, row: f, column: d - 1, };
+                    if (d != 1) {
+                        if (board[e][d - 2].solid != true && board[e + 1][d - 2].solid != true && board[e + 2][d - 2].solid != true) {
+                            board[e + 2][d - 2] = { blocktype: 'dirt', solid: true, interactive: false, row: e + 2, column: d - 2, };
+                            for (let f = e + 3; f < board.length - 2; f++) {
+                                if (board[f][d - 2].solid != true) {
+                                    board[f][d - 2] = { blocktype: 'dirt', solid: true, interactive: false, row: f, column: d - 2, };
+                                }
+                                else {
+                                    break;
+                                }
+                            }
                         }
                         else {
-                            break;
+                            board[e + 2][d - 1] = { blocktype: 'dirt', solid: true, interactive: false, row: e + 2, column: d - 1, };
+                            for (let f = e + 3; f < board.length - 2; f++) {
+                                if (board[f][d - 1].solid != true) {
+                                    board[f][d - 1] = { blocktype: 'dirt', solid: true, interactive: false, row: f, column: d - 1, };
+                                }
+                                else {
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        board[e + 2][d - 1] = { blocktype: 'dirt', solid: true, interactive: false, row: e + 2, column: d - 1, };
+                        for (let f = e + 3; f < board.length - 2; f++) {
+                            if (board[f][d - 1].solid != true) {
+                                board[f][d - 1] = { blocktype: 'dirt', solid: true, interactive: false, row: f, column: d - 1, };
+                            }
+                            else {
+                                break;
+                            }
                         }
                     }
                 }
             }
         }
+
     }
     for (let e = 0; e < board.length - 2; e++) {
         if (board[e + 2][35].solid == true && board[e + 1][35].solid != true) {
@@ -409,6 +461,16 @@ function loadRandomBoard() {
                 }
                 else {
                     board[e + 2][d] = { blocktype: 'stone', solid: true, interactive: false, row: e + 2, column: d, };
+                }
+            }
+        }
+    }
+
+    for (let e = 0; e < board.length - 2; e++) {
+        for (let d = 0; d < board[e].length; d++) {
+            if (board[e][d].blocktype == "dirt") {
+                if (board[e - 1][d].solid != true) {
+                    board[e][d] = { blocktype: 'dirtWithGrass', solid: true, interactive: false, row: e - 1, column: d, };
                 }
             }
         }
