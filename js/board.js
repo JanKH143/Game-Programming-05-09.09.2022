@@ -341,12 +341,17 @@ function boardPart(n) {
     else if (n < 21) {
         return 1;
     }
-    else {
+    else if (n < 33) {
         return -1;
+    }
+    else {
+        return -3;
     }
 }
 
+
 function loadRandomBoard() {
+    let doorPlaced = false
     for (let e = 0; e < board.length - 2; e++) {
         for (let d = 0; d < board[e].length; d++) {
             if (d < board[e].length - 2) {
@@ -369,14 +374,14 @@ function loadRandomBoard() {
             }
         }
     }
-    for (let e = board.length - 3; e > 0; e--) {
-        for (let d = board[e].length - 1; d > 1; d--) {
+    for (let e = 0; e < board.length - 1; e++) {
+        for (let d = board[e].length - 1; d > 0; d--) {
             if (board[e][d].solid == true) {
-                if (board[e][d - 1].solid != true && board[e + 1][d - 1].solid != true && board[e + 2][d - 1].solid != true && board[e + 3][d - 1].solid != true) {
-                    board[e + 3][d - 1] = { blocktype: 'stone', solid: true, interactive: false, row: e + 3, column: d - 1};
-                    for (let f = e + 4; f < board.length - 2; f++) {
+                if (board[e][d - 1].solid != true && board[e + 1][d - 1].solid != true && board[e + 2][d - 1].solid != true) {
+                    board[e + 2][d - 1] = { blocktype: 'stone', solid: true, interactive: false, row: e + 2, column: d - 1 };
+                    for (let f = e + 3; f < board.length - 2; f++) {
                         if (board[f][d - 1].solid != true) {
-                            board[f][d - 1] = { blocktype: 'stone', solid: true, interactive: false, row: f, column: d - 1};
+                            board[f][d - 1] = { blocktype: 'stone', solid: true, interactive: false, row: f, column: d - 1 };
                         }
                         else {
                             break;
@@ -386,6 +391,16 @@ function loadRandomBoard() {
             }
         }
     }
-    board[17][37] = { blocktype: 'openedDoorLower', solid: true, interactive: true, row: 17, column: 39 };
-    board[16][37] = { blocktype: 'openedDoorUpper', solid: true, interactive: true, row: 16, column: 39 };
+    for (let e = 0; e < board.length - 1; e++) {
+        if (board[e][35].solid == true && board[e - 1][35].solid != true) {
+            board[e - 2][37] = { blocktype: 'openedDoorUpper', solid: true, interactive: true, row: e - 2, column: 37 };
+            board[e - 1][37] = { blocktype: 'openedDoorLower', solid: true, interactive: true, row: e - 1, column: 37 };
+            doorPlaced = true
+        }
+        if (doorPlaced == true) {
+            for (let d = 36; d < board[e].length; d++) {
+                board[e][d] = { blocktype: 'stone', solid: true, interactive: false, row: e, column: d, };
+            }
+        }
+    }
 }
