@@ -42,10 +42,10 @@ function testInteraktion(x, y) {
             case "doorNextLevel":
                 player.level++;
                 $('#board').empty();
-                for(let i = 0; i < monsterBewegung.length; i++) {
+                for (let i = 0; i < monsterBewegung.length; i++) {
                     clearInterval(monsterBewegung[i]);
                 }
-                monsterlvl =[];
+                monsterlvl = [];
                 monsterBewegung = [];
                 board = generateStandardBoard();
                 //loadBoard();
@@ -56,25 +56,25 @@ function testInteraktion(x, y) {
                 setPosition();
                 break;
             case "woodenChest":
-                    board[y][x].blocktype = "woodenChestOpen";
-                    board[y][x].blocktype = "woodenChestOpen";
-                    replaceBlock("woodenChest");
-                    playerInteraction();
-                    player.hp++;
-                    herzenErstllen(1);
-                    displayHerz(true);
-                    break;
+                board[y][x].blocktype = "woodenChestOpen";
+                board[y][x].blocktype = "woodenChestOpen";
+                replaceBlock("woodenChest");
+                playerInteraction();
+                player.hp++;
+                herzenErstllen(1);
+                displayHerz(true);
+                break;
             case "doorLastLevelLower":
             case "doorLastLevelUpper":
-                    player.level--;
-                    $('#board').empty();
-                    board = generateStandardBoard();
-                    loadBoard();
-                    showBoard();
-                    player.x = 36;
-                    player.y = 16;
-                    setPosition();
-                    break;
+                player.level--;
+                $('#board').empty();
+                board = generateStandardBoard();
+                loadBoard();
+                showBoard();
+                player.x = 36;
+                player.y = 16;
+                setPosition();
+                break;
             default:
                 break;
         }
@@ -127,7 +127,7 @@ $(document).ready(e => {
             case "KeyW":
                 if (canJump)
                     jump();
-                    playerJumpAnimation();
+                playerJumpAnimation();
                 break;
             case "ArrowLeft":
             case "KeyA":
@@ -153,7 +153,7 @@ $(document).ready(e => {
             default:
                 break;
         }
-        for(let i = 0; i < monsterlvl.length; i++)
+        for (let i = 0; i < monsterlvl.length; i++)
             checkMonsterCollision(i)
     });
 });
@@ -186,16 +186,16 @@ function moveMonster(monsterNum) {
 function checkMonsterCollision(monsterNum) {
     monster = monsterlvl[monsterNum];
 
-    if(monster.column == player.x) {
-        if(monster.row == player.y || monster.row == player.y + 1) {
+    if (monster.column == player.x) {
+        if (monster.row == player.y || monster.row == player.y + 1) {
             player.hp--;
             herzEntfernen(1);
             $("#player").addClass("blink");
-            setTimeout(function() {$("#player").removeClass("blink")}, 450);
+            setTimeout(function () { $("#player").removeClass("blink") }, 450);
         }
     }
 
-    if(player.hp == 0) {
+    if (player.hp == 0) {
         location.replace('gameover.html');
     }
 }
@@ -203,7 +203,7 @@ function checkMonsterCollision(monsterNum) {
 var aktuelleHerzen;
 var counterHerzen;
 
-function herzenErstllen(anzahlHerzen){
+function herzenErstllen(anzahlHerzen) {
     anzahl = anzahlHerzen;
     for (counterHerzen = 0; counterHerzen < anzahl; counterHerzen++) {
         displayHerz(true);
@@ -212,15 +212,15 @@ function herzenErstllen(anzahlHerzen){
     return aktuelleHerzen;
 }
 
-function herzEntfernen(anzahl){
+function herzEntfernen(anzahl) {
     aktuelleHerzen = aktuelleHerzen - anzahl;
     displayHerz(false);
 }
 
-function displayHerz(hinzu){
-    if(hinzu == true){
+function displayHerz(hinzu) {
+    if (hinzu == true) {
         $('#herzbox').append('<div class="herz" id="herz' + counterHerzen + '"></div>');
-    }else if (hinzu == false){
+    } else if (hinzu == false) {
         $(('#herz' + aktuelleHerzen)).remove();
     }
 }
