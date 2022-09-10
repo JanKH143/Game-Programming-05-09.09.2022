@@ -334,12 +334,32 @@ function rndInt(n) {
     return Math.floor(Math.random() * n);
 }
 
+function boardPart(n) {
+    if (n < 9) {
+        return 0;
+    }
+    else if (n < 21) {
+        return 1;
+    }
+    else {
+        return -1;
+    }
+}
+
 function loadRandomBoard() {
     for (let e = 0; e < board.length - 2; e++) {
         for (let d = 0; d < board[e].length; d++) {
             if (d < board[e].length - 2) {
-                if (rndInt(e) < e - 7) {
+                if (rndInt(e) < e - 7 + boardPart(d)) {
                     board[e][d] = { blocktype: 'stone', solid: true, interactive: false, row: e, column: d, };
+                    for (let f = e + 1; f < board.length - 2; f++) {
+                        if (board[f][d].solid != true) {
+                            board[f][d] = { blocktype: 'stone', solid: true, interactive: false, row: f, column: d, };
+                        }
+                        else {
+                            break;
+                        }
+                    }
                 }
             }
             else {
