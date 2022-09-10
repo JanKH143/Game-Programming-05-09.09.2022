@@ -330,8 +330,8 @@ function replaceBlock(blockClass) {
     }
 }
 
-function rndInt(n) {
-    return Math.floor(Math.random() * n);
+function rndInt(n, c) {
+    return Math.floor(Math.random() * n + c);
 }
 
 function boardPart(n) {
@@ -380,7 +380,7 @@ function loadRandomBoard() {
     for (let e = 0; e < board.length - 2; e++) {
         for (let d = 0; d < board[e].length; d++) {
             if (d < board[e].length - 2) {
-                if (rndInt(e) < e - 8 + boardPart(d)) {
+                if (rndInt(e, 0) < e - 8 + boardPart(d)) {
                     if (e < 17) {
                         board[e][d] = { blocktype: 'dirt', solid: true, interactive: false, row: e, column: d, };
                         if (e > 11) {
@@ -450,8 +450,8 @@ function loadRandomBoard() {
     }
     for (let e = 0; e < board.length - 2; e++) {
         if (board[e + 2][35].solid == true && board[e + 1][35].solid != true) {
-            board[e][37] = { blocktype: 'openedDoorUpper', solid: true, interactive: true, row: e, column: 37, };
-            board[e + 1][37] = { blocktype: 'openedDoorLower', solid: true, interactive: true, row: e + 1, column: 37, };
+            board[e][37] = { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: e, column: 37, };
+            board[e + 1][37] = { blocktype: 'closedDoorLower', solid: true, interactive: true, row: e + 1, column: 37, };
             doorPlaced = true
         }
         if (doorPlaced == true) {
@@ -474,5 +474,13 @@ function loadRandomBoard() {
                 }
             }
         }
+    }
+    let g = rndInt(20, 9)
+    for (let e = 0; e < board.length; e++) {
+        if (board[e][g].blocktype == "air" && board[e + 1][g].solid == true) {
+            board[e][g] = { blocktype: 'key', solid: false, interactive: true, row: e, column: g, };
+            break;
+        }
+        else console.log("error")
     }
 }
