@@ -485,8 +485,6 @@ function loadRandomBoard() {
             }
         }
     }
-
-
     //Blockakzente werden plaziert
     let foxPlaced = false
     for (let e = 0; e < board.length; e++) {
