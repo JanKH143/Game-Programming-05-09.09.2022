@@ -448,16 +448,24 @@ function loadRandomBoard() {
     }
     //Blöcke werden auf erreichbarkeit von rechts geprüft
     for (let e = 0; e < board.length - 2; e++) {
-        for (let d = board[e].length - 1; d > 0; d--) {
+        for (let d = 0; d < board[e].length - 2; d++) {
             if (board[e][d].solid == true) {
                 if (board[e][d + 1].solid != true && board[e + 1][d + 1].solid != true && board[e + 2][d + 1].solid != true && board[e + 3][d + 1].solid != true) {
                     if (board[e][d + 2].solid != true && board[e + 1][d + 2].solid != true && board[e + 2][d + 2].solid != true && board[e + 3][d + 2].solid != true) {
-                        board[e + 3][d + 2] = { blocktype: 'dirt', solid: true, interactive: false, row: e + 3, column: d + 2, };
+                        board[e + 3][d + 1] = { blocktype: 'dirt', solid: true, interactive: false, row: e + 3, column: d + 2, };
+                        for (let f = e + 4; f < board.length - 2; f++) {
+                            if (board[f][d + 1].solid != true) {
+                                board[f][d + 1] = { blocktype: 'dirt', solid: true, interactive: false, row: f, column: d - 1, };
+                            }
+                            else {
+                                break;
+                            }
+                        }
                     }
                 }
             }
-        }
 
+        }
     }
     //Tür wird auf letzter Blockhöhe generiert
     for (let e = 0; e < board.length - 2; e++) {
@@ -477,6 +485,8 @@ function loadRandomBoard() {
             }
         }
     }
+
+
     //Blockakzente werden plaziert
     let foxPlaced = false
     for (let e = 0; e < board.length; e++) {
