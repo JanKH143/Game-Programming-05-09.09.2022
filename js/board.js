@@ -465,12 +465,37 @@ function loadRandomBoard() {
             }
         }
     }
-
-    for (let e = 0; e < board.length - 2; e++) {
+    let foxPlaced = false
+    for (let e = 0; e < board.length; e++) {
         for (let d = 0; d < board[e].length; d++) {
             if (board[e][d].blocktype == "dirt") {
                 if (board[e - 1][d].solid != true) {
-                    board[e][d] = { blocktype: 'dirtWithGrass', solid: true, interactive: false, row: e - 1, column: d, };
+                    board[e][d].blocktype = 'dirtWithGrass';
+                }
+                else {
+                    switch (rndInt(50, 0)) {
+                        case 0:
+                            if (foxPlaced == false) {
+                                board[e][d].blocktype = 'fox';
+                                foxPlaced = true
+                            }
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+            else if (board[e][d].blocktype == "stone") {
+                switch (rndInt(50, 0)) {
+                    case 0:
+                        board[e][d].blocktype = "stone2";
+                        break;
+                    case 1:
+                    case 2:
+                        board[e][d].blocktype = "holeInWall";
+                        break;
+                    default:
+                        break;
                 }
             }
         }
@@ -481,6 +506,5 @@ function loadRandomBoard() {
             board[e][g] = { blocktype: 'key', solid: false, interactive: true, row: e, column: g, };
             break;
         }
-        else console.log("error")
     }
 }
