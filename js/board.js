@@ -373,6 +373,7 @@ function rndBackground() {
 function loadRandomBoard() {
     rndBackground();
     let doorPlaced = false
+    //Blöcke werden plaziert
     for (let e = 0; e < board.length - 2; e++) {
         for (let d = 0; d < board[e].length; d++) {
             if (d < board[e].length - 2) {
@@ -400,6 +401,7 @@ function loadRandomBoard() {
             }
         }
     }
+    //Blöcke werden auf erreichbarkeit von links geprüft
     for (let e = 0; e < board.length - 2; e++) {
         for (let d = board[e].length - 1; d > 0; d--) {
             if (board[e][d].solid == true) {
@@ -444,6 +446,20 @@ function loadRandomBoard() {
         }
 
     }
+    //Blöcke werden auf erreichbarkeit von rechts geprüft
+    for (let e = 0; e < board.length - 2; e++) {
+        for (let d = board[e].length - 1; d > 0; d--) {
+            if (board[e][d].solid == true) {
+                if (board[e][d + 1].solid != true && board[e + 1][d + 1].solid != true && board[e + 2][d + 1].solid != true && board[e + 3][d + 1].solid != true) {
+                    if (board[e][d + 2].solid != true && board[e + 1][d + 2].solid != true && board[e + 2][d + 2].solid != true && board[e + 3][d + 2].solid != true) {
+                        board[e + 3][d + 2] = { blocktype: 'dirt', solid: true, interactive: false, row: e + 3, column: d + 2, };
+                    }
+                }
+            }
+        }
+
+    }
+    //Tür wird auf letzter Blockhöhe generiert
     for (let e = 0; e < board.length - 2; e++) {
         if (board[e + 2][35].solid == true && board[e + 1][35].solid != true) {
             board[e][37] = { blocktype: 'closedDoorUpper', solid: true, interactive: true, row: e, column: 37, };
@@ -461,6 +477,7 @@ function loadRandomBoard() {
             }
         }
     }
+    //Blockakzente werden plaziert
     let foxPlaced = false
     for (let e = 0; e < board.length; e++) {
         for (let d = 0; d < board[e].length; d++) {
