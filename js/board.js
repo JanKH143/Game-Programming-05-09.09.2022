@@ -350,26 +350,22 @@ function boardPart(n) {
 }
 
 function rndBackground() {
-    switch (rndInt(3)) {
+    switch (rndInt(3, 0)) {
         case 0:
+            $("#board").removeClass();
             $("#board").addClass("background1");
-            $("#board").removeClass("background2");
-            $("#board").removeClass("background3");
             break;
         case 1:
-            $("#board").removeClass("background1");
+            $("#board").removeClass();
             $("#board").addClass("background2");
-            $("#board").removeClass("background3");
             break;
         case 2:
-            $("#board").removeClass("background1");
-            $("#board").removeClass("background2");
+            $("#board").removeClass();
             $("#board").addClass("background3");
             break;
         default:
+            $("#board").removeClass();
             $("#board").addClass("background1");
-            $("#board").removeClass("background2");
-            $("#board").removeClass("background3");
             break;
     }
 }
@@ -486,16 +482,25 @@ function loadRandomBoard() {
                 }
             }
             else if (board[e][d].blocktype == "stone") {
-                switch (rndInt(50, 0)) {
+                switch (rndInt(100, 0)) {
                     case 0:
+                    case 1:
                         board[e][d].blocktype = "stone2";
                         break;
-                    case 1:
                     case 2:
                         board[e][d].blocktype = "holeInWall";
                         break;
                     default:
                         break;
+                }
+                if (board[e - 1][d].blocktype == "dirt") {
+                    switch (rndInt(10, 0)) {
+                        case 0:
+                            board[e][d].blocktype = "mossStone";
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         }
